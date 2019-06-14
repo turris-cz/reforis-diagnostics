@@ -1,0 +1,2 @@
+recursive-include reforis_diagnostics/templates *
+recursive-include reforis_static/reforis_diagnostics *

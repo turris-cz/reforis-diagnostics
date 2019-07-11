@@ -20,7 +20,7 @@ diagnostics = Blueprint(
 def index():
     if request.method == 'GET':
         return render_template(
-            'index.html',
+            'diagnostics.html',  # Not index.html! Otherwise it will be overwritten by main application.
             **current_app.backend.perform('diagnostics', 'list_modules'),
             **current_app.backend.perform('diagnostics', 'list_diagnostics')
         )

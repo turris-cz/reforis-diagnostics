@@ -9,7 +9,7 @@ import setuptools
 
 setuptools.setup(
     name='reforis_diagnostics',
-    version='1.0',
+    version='1.1',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 

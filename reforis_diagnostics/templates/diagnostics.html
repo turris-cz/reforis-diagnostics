@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
+{% block title %}{% trans %}Diagnostics{% endtrans %}{% endblock %}
+
 {% block content %}
-    <h1>Diagnostics</h1>
-    <h3>Modules</h3>
+    <h1>{% trans %}Diagnostics{% endtrans %}</h1>
+    <h3>{% trans %}Modules{% endtrans %}</h3>
     <p>
         {% trans %}
             This page is dedicated to create diagnostics which can be useful to us to debug some problems related

@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modules /> should display spinner 1`] = `
+<div>
+  <h3>
+    Modules
+  </h3>
+  <div
+    class="spinner-wrapper my-3 text-center"
+  >
+    <div
+      class="spinner-border "
+      role="status"
+    >
+      <span
+        class="sr-only"
+      />
+    </div>
+    <div
+      class="spinner-text"
+    />
+  </div>
+</div>
+`;
+
+exports[`<Modules /> should handle error on fetching modules 1`] = `
+<div>
+  <h3>
+    Modules
+  </h3>
+  <p
+    class="text-center text-danger"
+  >
+    An error occurred during loading modules
+  </p>
+</div>
+`;
+
+exports[`<Modules /> should render modules 1`] = `
+<div>
+  <h3>
+    Modules
+  </h3>
+  <p>
+    Select modules which you want to include in the report.
+  </p>
+  <form
+    class="col-sm-12 offset-lg-1 col-lg-10"
+  >
+    <div
+      style="font-weight: bold;"
+    >
+      <div
+        class=""
+        style="margin-bottom: 1rem;"
+      >
+        <div
+          class="custom-control custom-checkbox"
+          style="margin-bottom: 0px;"
+        >
+          <input
+            class="custom-control-input"
+            id="1"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="1"
+          >
+            Select all
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="col-sm-12 col-md-6 col-lg-4"
+      >
+        <div
+          class=""
+          style="margin-bottom: 1rem;"
+        >
+          <div
+            class="custom-control custom-checkbox"
+            style="margin-bottom: 0px;"
+          >
+            <input
+              class="custom-control-input"
+              id="2"
+              type="checkbox"
+            />
+            <label
+              class="custom-control-label"
+              for="2"
+            >
+              foo_module
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-sm-12 col-md-6 col-lg-4"
+      >
+        <div
+          class=""
+          style="margin-bottom: 1rem;"
+        >
+          <div
+            class="custom-control custom-checkbox"
+            style="margin-bottom: 0px;"
+          >
+            <input
+              class="custom-control-input"
+              id="3"
+              type="checkbox"
+            />
+            <label
+              class="custom-control-label"
+              for="3"
+            >
+              bar_module
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-sm-12 col-md-6 col-lg-4"
+      >
+        <div
+          class=""
+          style="margin-bottom: 1rem;"
+        >
+          <div
+            class="custom-control custom-checkbox"
+            style="margin-bottom: 0px;"
+          >
+            <input
+              class="custom-control-input"
+              id="4"
+              type="checkbox"
+            />
+            <label
+              class="custom-control-label"
+              for="4"
+            >
+              fizz_module
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-sm-12 col-md-6 col-lg-4"
+      >
+        <div
+          class=""
+          style="margin-bottom: 1rem;"
+        >
+          <div
+            class="custom-control custom-checkbox"
+            style="margin-bottom: 0px;"
+          >
+            <input
+              class="custom-control-input"
+              id="5"
+              type="checkbox"
+            />
+            <label
+              class="custom-control-label"
+              for="5"
+            >
+              buzz_module
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      disabled=""
+      type="submit"
+    >
+       
+       
+      Generate report
+    </button>
+  </form>
+</div>
+`;

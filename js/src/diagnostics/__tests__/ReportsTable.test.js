@@ -72,7 +72,7 @@ describe("<ReportsTable />", () => {
         const container = createTable([{diag_id: 1234, status: "ready"}])
         fireEvent.click(getByText(container, "Delete"));
         // Response to DELETE report
-        mockAxios.mockError({response: {}});
+        mockAxios.mockError({response: {headers: {"content-type": "application/json"}}});
         await wait(() => {
             expect(setAlert).toHaveBeenCalledWith("Cannot delete report");
         });

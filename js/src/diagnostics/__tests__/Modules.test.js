@@ -91,7 +91,7 @@ describe("<Modules />", () => {
         );
 
         // Response to POST report
-        mockAxios.mockError({response: {}});
+        mockAxios.mockError({response: {headers: {"content-type": "application/json"}}});
         await wait(() => {
             expect(setAlert).toHaveBeenCalledWith("Cannot generate report");
         });

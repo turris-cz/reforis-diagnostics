@@ -5,17 +5,41 @@
 
 # !/usr/bin/env python3
 
+import copy
+import pathlib
+
 import setuptools
+from setuptools.command.build_py import build_py
+
+NAME = 'reforis_diagnostics'
+
+BASE_DIR = pathlib.Path(__file__).absolute().parent
+
+
+class CustomBuild(build_py):
+    def run(self):
+        # build package
+        build_py.run(self)
+
+        from reforis_distutils import ForisPluginBuild
+        cmd = ForisPluginBuild(copy.copy(self.distribution))
+        cmd.root_path = BASE_DIR
+        cmd.module_name = NAME
+        cmd.build_lib = self.build_lib
+        cmd.ensure_finalized()
+        cmd.run()
+
 
 setuptools.setup(
-    name='reforis_diagnostics',
+    name=NAME,
     version='1.1',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
-    description='The reforis diagnostics plugin',
+    description='The reForis diagnostics plugin',
     long_description='',
-    author='Bogdan Bodnar',
+    author='CZ.NIC, z. s. p. o.',
+    author_email='bogdan.bodnar@nic.cz',
 
     # All versions are fixed just for case. Once in while try to check for new versions.
     install_requires=[
@@ -30,8 +54,14 @@ setuptools.setup(
             'pycodestyle==2.5.0',
         ],
     },
+    setup_requires=[
+        'reforis_distutils',
+    ],
+    dependency_links=[
+        "git+https://gitlab.labs.nic.cz/turris/reforis/reforis-distutils.git#egg=reforis-distutils",
+    ],
     entry_points={
-        'foris.plugins': 'diagnostics = reforis_diagnostics:diagnostics'
+        'foris.plugins': f'{NAME} = {NAME}:diagnostics'
     },
     classifiers=[
         'Framework :: Flask',
@@ -43,5 +73,8 @@ setuptools.setup(
         'Programming Language :: Python :: 3',
         'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
     ],
+    cmdclass={
+        'build_py': CustomBuild,
+    },
     zip_safe=False,
 )

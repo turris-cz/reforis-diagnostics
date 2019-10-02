@@ -6,11 +6,14 @@
 import gzip
 import io
 from http import HTTPStatus
+from pathlib import Path
 
 from flask import Blueprint, current_app, request, send_file, jsonify
 from flask_babel import gettext as _
 
 from .utils import DiagnosticsAPIError, validate_json
+
+BASE_DIR = Path(__file__).parent
 
 # pylint: disable=invalid-name
 blueprint = Blueprint('Diagnostics', __name__, url_prefix='/diagnostics/api')
@@ -19,8 +22,11 @@ blueprint = Blueprint('Diagnostics', __name__, url_prefix='/diagnostics/api')
 diagnostics = {
     'blueprint': blueprint,
     'js_app_path': 'diagnostics/app.min.js',
-    'translations_path': __file__ / "translations",
+    'translations_path': BASE_DIR / 'translations',
 }
+
+print(BASE_DIR)
+raise Exception
 
 
 @blueprint.route('/modules', methods=['GET'])

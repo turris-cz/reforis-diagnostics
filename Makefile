@@ -50,6 +50,8 @@ prepare-dev:
 	make venv
 
 install:
+	opkg update
+	opkg install git git-http
 	$(ROUTER_PYTHON) -m pip install -e .
 	ln -sf /tmp/reforis_diagnostics/reforis_static/diagnostics /tmp/reforis/reforis_static/
 install-js: js/package.json

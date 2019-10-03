@@ -25,9 +25,6 @@ diagnostics = {
     'translations_path': BASE_DIR / 'translations',
 }
 
-print(BASE_DIR)
-raise Exception
-
 
 @blueprint.route('/modules', methods=['GET'])
 def get_modules():

@@ -50,6 +50,8 @@ prepare-dev:
 	make venv
 
 install:
+	opkg update
+	opkg install git git-http
 	$(ROUTER_PYTHON) -m pip install -e .
 	ln -sf /tmp/reforis_diagnostics/reforis_static/diagnostics /tmp/reforis/reforis_static/
 install-js: js/package.json
@@ -81,10 +83,8 @@ create-messages:
 	$(VENV_BIN)/pybabel extract -F babel.cfg -o ./reforis_diagnostics/translations/messages.pot .
 update-messages:
 	$(VENV_BIN)/pybabel update -i ./reforis_diagnostics/translations/messages.pot -d ./reforis_diagnostics/translations
-	$(VENV_BIN)/pybabel update -i ./reforis_diagnostics/translations/tzinfo.pot -d ./reforis_diagnostics/translations -D tzinfo
 compile-messages:
 	$(VENV_BIN)/pybabel compile -f -d ./reforis_diagnostics/translations
-	$(VENV_BIN)/pybabel compile -f -d ./reforis_diagnostics/translations -D tzinfo
 
 clean:
 	find . -name '*.pyc' -exec rm -f {} +

@@ -5,27 +5,63 @@
 
 # !/usr/bin/env python3
 
+import copy
+import pathlib
+
 import setuptools
+from setuptools.command.build_py import build_py
+
+NAME = 'reforis_diagnostics'
+
+BASE_DIR = pathlib.Path(__file__).absolute().parent
+
+
+class CustomBuild(build_py):
+    def run(self):
+        # build package
+        build_py.run(self)
+
+        from reforis_distutils import ForisPluginBuild
+        cmd = ForisPluginBuild(copy.copy(self.distribution))
+        cmd.root_path = BASE_DIR
+        cmd.module_name = NAME
+        cmd.build_lib = self.build_lib
+        cmd.ensure_finalized()
+        cmd.run()
+
 
 setuptools.setup(
-    name='reforis_diagnostics',
-    version='1.1',
+    name=NAME,
+    version='2.0.0',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
-    description='The reforis diagnostics plugin',
+    description='The reForis diagnostics plugin',
     long_description='',
-    author='Bogdan Bodnar',
+    author='CZ.NIC, z. s. p. o.',
+    author_email='bogdan.bodnar@nic.cz',
 
     # All versions are fixed just for case. Once in while try to check for new versions.
     install_requires=[
-        'flask==1.0.2',
-        'wtforms==2.2.1',
-        'Flask-WTF==0.14.2',
-        'Bootstrap-Flask==1.0.8',
+        'flask',
+        'Babel',
+        'Flask-Babel',
+    ],
+    extras_require={
+        'devel': [
+            'pytest==3.7.1',
+            'pylint==2.3.1',
+            'pycodestyle==2.5.0',
+        ],
+    },
+    setup_requires=[
+        'reforis_distutils',
+    ],
+    dependency_links=[
+        "git+https://gitlab.labs.nic.cz/turris/reforis/reforis-distutils.git#egg=reforis-distutils",
     ],
     entry_points={
-        'foris.plugins': 'diagnostics = reforis_diagnostics:diagnostics'
+        'foris.plugins': f'{NAME} = {NAME}:diagnostics'
     },
     classifiers=[
         'Framework :: Flask',
@@ -37,5 +73,8 @@ setuptools.setup(
         'Programming Language :: Python :: 3',
         'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
     ],
+    cmdclass={
+        'build_py': CustomBuild,
+    },
     zip_safe=False,
 )

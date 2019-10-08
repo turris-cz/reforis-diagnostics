@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ReportsTable /> should display spinner when report is not ready 1`] = `
+<div>
+  <table
+    class="table table-hover"
+    data-testid="reports-table"
+  >
+    <tbody>
+      <tr>
+        <th
+          scope="col"
+        >
+          ID
+        </th>
+        <th
+          aria-label="Download"
+          scope="col"
+        />
+        <th
+          aria-label="Delete"
+          scope="col"
+        />
+      </tr>
+      <tr>
+        <td
+          class="align-middle"
+        >
+          1234
+        </td>
+        <td>
+          <div
+            class="spinner-border "
+            role="status"
+          >
+            <span
+              class="sr-only"
+            />
+          </div>
+          <div
+            class="spinner-text"
+          />
+        </td>
+        <td />
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`<ReportsTable /> should handle lack of reports 1`] = `
+<div>
+  <p
+    class="text-muted text-center"
+  >
+    There are no reports available.
+  </p>
+</div>
+`;
+
+exports[`<ReportsTable /> should render reports 1`] = `
+<div>
+  <table
+    class="table table-hover"
+    data-testid="reports-table"
+  >
+    <tbody>
+      <tr>
+        <th
+          scope="col"
+        >
+          ID
+        </th>
+        <th
+          aria-label="Download"
+          scope="col"
+        />
+        <th
+          aria-label="Delete"
+          scope="col"
+        />
+      </tr>
+      <tr>
+        <td
+          class="align-middle"
+        >
+          1234
+        </td>
+        <td>
+          <a
+            class="btn btn-primary"
+            href="/reforis/diagnostics/api/reports/1234/contents"
+          >
+            Download
+          </a>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger"
+            type="button"
+          >
+             
+             
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

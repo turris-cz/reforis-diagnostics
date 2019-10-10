@@ -21,7 +21,7 @@ blueprint = Blueprint('Diagnostics', __name__, url_prefix='/diagnostics/api')
 # pylint: disable=invalid-name
 diagnostics = {
     'blueprint': blueprint,
-    'js_app_path': 'diagnostics/app.min.js',
+    'js_app_path': 'reforis_diagnostics/js/app.min.js',
     'translations_path': BASE_DIR / 'translations',
 }
 

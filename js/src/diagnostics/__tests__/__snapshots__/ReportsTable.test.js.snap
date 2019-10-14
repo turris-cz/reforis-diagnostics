@@ -28,7 +28,9 @@ exports[`<ReportsTable /> should display spinner when report is not ready 1`] = 
         >
           1234
         </td>
-        <td>
+        <td
+          class="text-center"
+        >
           <div
             class="spinner-border "
             role="status"
@@ -41,7 +43,9 @@ exports[`<ReportsTable /> should display spinner when report is not ready 1`] = 
             class="spinner-text"
           />
         </td>
-        <td />
+        <td
+          class="text-right"
+        />
       </tr>
     </tbody>
   </table>
@@ -86,15 +90,20 @@ exports[`<ReportsTable /> should render reports 1`] = `
         >
           1234
         </td>
-        <td>
+        <td
+          class="text-center"
+        >
           <a
             class="btn btn-primary"
+            download=""
             href="/reforis/diagnostics/api/reports/1234/contents"
           >
             Download
           </a>
         </td>
-        <td>
+        <td
+          class="text-right"
+        >
           <button
             class="btn btn-danger"
             type="button"

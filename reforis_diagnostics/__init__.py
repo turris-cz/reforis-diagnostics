@@ -10,8 +10,9 @@ from pathlib import Path
 
 from flask import Blueprint, current_app, request, send_file, jsonify
 from flask_babel import gettext as _
+from reforis.foris_controller_api import APIError
+from reforis.foris_controller_api.utils import validate_json
 
-from .utils import DiagnosticsAPIError, validate_json
 
 BASE_DIR = Path(__file__).parent
 
@@ -40,8 +41,8 @@ def get_reports():
 def post_report():
     try:
         validate_json(request.json, {'modules': list})
-    except DiagnosticsAPIError as error:
-        return error.data, error.status_code
+    except APIError as error:
+        return jsonify(error.data), error.status_code
 
     response = current_app.backend.perform('diagnostics', 'prepare_diagnostic', request.json)
     if not response.get('diag_id'):
@@ -54,16 +55,16 @@ def post_report():
 def get_report_meta(report_id):
     try:
         return jsonify(_get_report_details(report_id))
-    except DiagnosticsAPIError as error:
-        return error.data, error.status_code
+    except APIError as error:
+        return jsonify(error.data), error.status_code
 
 
 @blueprint.route('/reports/<report_id>/contents', methods=['GET'])
 def get_report_contents(report_id):
     try:
         report = _get_report_details(report_id)
-    except DiagnosticsAPIError as error:
-        return error.data, error.status_code
+    except APIError as error:
+        return jsonify(error.data), error.status_code
 
     if report['status'] != 'ready':
         return jsonify(_('Requested report is not ready yet')), HTTPStatus.CONFLICT
@@ -75,7 +76,7 @@ def _get_report_details(report_id):
     reports = current_app.backend.perform('diagnostics', 'list_diagnostics')['diagnostics']
     search_result = next((report for report in reports if report['diag_id'] == report_id), None)
     if not search_result:
-        raise DiagnosticsAPIError(jsonify(_('Requested report does not exist')), HTTPStatus.NOT_FOUND)
+        raise APIError(_('Requested report does not exist'), HTTPStatus.NOT_FOUND)
     return search_result
 
 

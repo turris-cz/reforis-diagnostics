@@ -10,8 +10,9 @@ from pathlib import Path
 
 from flask import Blueprint, current_app, request, send_file, jsonify
 from flask_babel import gettext as _
+
 from reforis.foris_controller_api import APIError
-from reforis.foris_controller_api.utils import validate_json
+from reforis.foris_controller_api.utils import log_error, validate_json
 
 
 BASE_DIR = Path(__file__).parent
@@ -46,7 +47,7 @@ def post_report():
 
     response = current_app.backend.perform('diagnostics', 'prepare_diagnostic', request.json)
     if not response.get('diag_id'):
-        current_app.logger.error('Invalid backend response for creating diagnostics report: %s', response)
+        log_error(current_app, f'Invalid backend response for creating diagnostics report: {response}', request)
         return jsonify(_('Cannot create diagnostics report')), HTTPStatus.INTERNAL_SERVER_ERROR
     return jsonify(response), HTTPStatus.ACCEPTED
 
@@ -98,7 +99,7 @@ def delete_report(report_id):
         'remove_diagnostic',
         {'diag_id': report_id},
     )
-    if not response['result']:
-        current_app.logger.error('Invalid backend response for deleting diagnostics report: %s', response)
+    if response.get('result') is not True:
+        log_error(current_app, f'Invalid backend response for deleting diagnostics report: {response}', request)
         return jsonify(_('Cannot delete report')), HTTPStatus.INTERNAL_SERVER_ERROR
     return '', HTTPStatus.NO_CONTENT

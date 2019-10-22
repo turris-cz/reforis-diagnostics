@@ -3,10 +3,10 @@
   "author": "CZ.NIC, z.s.p.o.",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.labs.nic.cz/turris/reforis/diagnostics.git"
+    "url": "https://gitlab.labs.nic.cz/turris/reforis/reforis-diagnostics.git"
   },
   "license": "GPL-3.0",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Diagnostics plugins for Foris.",
   "main": "./src/app.js",
   "dependencies": {

@@ -52,13 +52,14 @@ setuptools.setup(
             'pytest==3.7.1',
             'pylint==2.3.1',
             'pycodestyle==2.5.0',
+            'reforis @ git+https://gitlab.labs.nic.cz/turris/reforis/reforis@dev#egg=reforis',
         ],
     },
     setup_requires=[
         'reforis_distutils',
     ],
     dependency_links=[
-        "git+https://gitlab.labs.nic.cz/turris/reforis/reforis-distutils.git#egg=reforis-distutils",
+        'git+https://gitlab.labs.nic.cz/turris/reforis/reforis-distutils.git#egg=reforis-distutils',
     ],
     entry_points={
         'foris.plugins': f'{NAME} = {NAME}:diagnostics'

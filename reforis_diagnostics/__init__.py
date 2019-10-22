@@ -11,7 +11,9 @@ from pathlib import Path
 from flask import Blueprint, current_app, request, send_file, jsonify
 from flask_babel import gettext as _
 
-from .utils import DiagnosticsAPIError, validate_json
+from reforis.foris_controller_api import APIError
+from reforis.foris_controller_api.utils import log_error, validate_json
+
 
 BASE_DIR = Path(__file__).parent
 
@@ -40,12 +42,12 @@ def get_reports():
 def post_report():
     try:
         validate_json(request.json, {'modules': list})
-    except DiagnosticsAPIError as error:
-        return error.data, error.status_code
+    except APIError as error:
+        return jsonify(error.data), error.status_code
 
     response = current_app.backend.perform('diagnostics', 'prepare_diagnostic', request.json)
     if not response.get('diag_id'):
-        current_app.logger.error('Invalid backend response for creating diagnostics report: %s', response)
+        log_error(current_app, f'Invalid backend response for creating diagnostics report: {response}', request)
         return jsonify(_('Cannot create diagnostics report')), HTTPStatus.INTERNAL_SERVER_ERROR
     return jsonify(response), HTTPStatus.ACCEPTED
 
@@ -54,16 +56,16 @@ def post_report():
 def get_report_meta(report_id):
     try:
         return jsonify(_get_report_details(report_id))
-    except DiagnosticsAPIError as error:
-        return error.data, error.status_code
+    except APIError as error:
+        return jsonify(error.data), error.status_code
 
 
 @blueprint.route('/reports/<report_id>/contents', methods=['GET'])
 def get_report_contents(report_id):
     try:
         report = _get_report_details(report_id)
-    except DiagnosticsAPIError as error:
-        return error.data, error.status_code
+    except APIError as error:
+        return jsonify(error.data), error.status_code
 
     if report['status'] != 'ready':
         return jsonify(_('Requested report is not ready yet')), HTTPStatus.CONFLICT
@@ -75,7 +77,7 @@ def _get_report_details(report_id):
     reports = current_app.backend.perform('diagnostics', 'list_diagnostics')['diagnostics']
     search_result = next((report for report in reports if report['diag_id'] == report_id), None)
     if not search_result:
-        raise DiagnosticsAPIError(jsonify(_('Requested report does not exist')), HTTPStatus.NOT_FOUND)
+        raise APIError(_('Requested report does not exist'), HTTPStatus.NOT_FOUND)
     return search_result
 
 
@@ -97,7 +99,7 @@ def delete_report(report_id):
         'remove_diagnostic',
         {'diag_id': report_id},
     )
-    if not response['result']:
-        current_app.logger.error('Invalid backend response for deleting diagnostics report: %s', response)
+    if response.get('result') is not True:
+        log_error(current_app, f'Invalid backend response for deleting diagnostics report: {response}', request)
         return jsonify(_('Cannot delete report')), HTTPStatus.INTERNAL_SERVER_ERROR
     return '', HTTPStatus.NO_CONTENT

@@ -205,15 +205,20 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
         >
           1234
         </td>
-        <td>
+        <td
+          class="text-center"
+        >
           <a
             class="btn btn-primary"
+            download=""
             href="/reforis/diagnostics/api/reports/1234/contents"
           >
             Download
           </a>
         </td>
-        <td>
+        <td
+          class="text-right"
+        >
           <button
             class="btn btn-danger"
             type="button"
@@ -230,15 +235,20 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
         >
           5678
         </td>
-        <td>
+        <td
+          class="text-center"
+        >
           <a
             class="btn btn-primary"
+            download=""
             href="/reforis/diagnostics/api/reports/5678/contents"
           >
             Download
           </a>
         </td>
-        <td>
+        <td
+          class="text-right"
+        >
           <button
             class="btn btn-danger"
             type="button"
@@ -366,15 +376,20 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
         >
           1234
         </td>
-        <td>
+        <td
+          class="text-center"
+        >
           <a
             class="btn btn-primary"
+            download=""
             href="/reforis/diagnostics/api/reports/1234/contents"
           >
             Download
           </a>
         </td>
-        <td>
+        <td
+          class="text-right"
+        >
           <button
             class="btn btn-danger"
             type="button"

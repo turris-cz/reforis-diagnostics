@@ -7,6 +7,7 @@ import {
     SpinnerElement,
     Button,
     AlertContext,
+    DownloadButton,
 } from "foris";
 
 import API_URLs from "API";
@@ -81,8 +82,12 @@ function Report({ report, onReload }) {
     return (
         <tr>
             <td className="align-middle">{report.diag_id}</td>
-            <td>{isReady ? <a href={`${API_URLs.reports}/${report.diag_id}/contents`} className="btn btn-primary">{_("Download")}</a> : <SpinnerElement />}</td>
-            <td>{isReady && <Button className="btn-danger" onClick={deleteReport}>{_("Delete")}</Button>}</td>
+            <td className="text-center">
+                {isReady
+                    ? <DownloadButton href={`${API_URLs.reports}/${report.diag_id}/contents`}>{_("Download")}</DownloadButton>
+                    : <SpinnerElement />}
+            </td>
+            <td className="text-right">{isReady && <Button className="btn-danger" onClick={deleteReport}>{_("Delete")}</Button>}</td>
         </tr>
     );
 }

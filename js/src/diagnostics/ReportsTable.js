@@ -53,7 +53,7 @@ function Report({ report, onReload }) {
         if (deleteReportResponse.isSuccess) {
             onReload();
         } else if (deleteReportResponse.isError) {
-            setAlert("Cannot delete report");
+            setAlert(_("Cannot delete report"));
         }
     }, [deleteReportResponse, onReload, setAlert]);
 
@@ -73,7 +73,7 @@ function Report({ report, onReload }) {
             }
             onReload();
         } else if (getReportResponse.isError) {
-            setAlert("Cannot fetch report data");
+            setAlert(_("Cannot fetch report data"));
         }
     }, [getReportResponse, getReport, onReload, setAlert]);
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-02 15:58+0200\n"
+"POT-Creation-Date: 2019-10-22 17:12+0200\n"
 "PO-Revision-Date: 2019-10-02 16:28+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fi\n"
@@ -44,6 +44,10 @@ msgstr ""
 msgid "Modules"
 msgstr ""
 
+#: js/src/diagnostics/Modules.js:84
+msgid "Cannot generate report"
+msgstr ""
+
 #: js/src/diagnostics/Modules.js:116
 msgid "Select modules which you want to include in the report."
 msgstr ""
@@ -56,35 +60,39 @@ msgstr ""
 msgid "Generate report"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:23
+#: js/src/diagnostics/ReportsTable.js:24
 msgid "There are no reports available."
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:30
+#: js/src/diagnostics/ReportsTable.js:31
 msgid "ID"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:31 js/src/diagnostics/ReportsTable.js:84
+#: js/src/diagnostics/ReportsTable.js:32 js/src/diagnostics/ReportsTable.js:87
 msgid "Download"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:32 js/src/diagnostics/ReportsTable.js:85
+#: js/src/diagnostics/ReportsTable.js:33 js/src/diagnostics/ReportsTable.js:90
 msgid "Delete"
 msgstr ""
 
-#: reforis_diagnostics/__init__.py:46
+#: js/src/diagnostics/ReportsTable.js:56 reforis_diagnostics/__init__.py:104
+msgid "Cannot delete report"
+msgstr ""
+
+#: js/src/diagnostics/ReportsTable.js:76
+msgid "Cannot fetch report data"
+msgstr ""
+
+#: reforis_diagnostics/__init__.py:51
 msgid "Cannot create diagnostics report"
 msgstr ""
 
-#: reforis_diagnostics/__init__.py:66
+#: reforis_diagnostics/__init__.py:71
 msgid "Requested report is not ready yet"
 msgstr ""
 
-#: reforis_diagnostics/__init__.py:75
+#: reforis_diagnostics/__init__.py:80
 msgid "Requested report does not exist"
-msgstr ""
-
-#: reforis_diagnostics/__init__.py:99
-msgid "Cannot delete report"
 msgstr ""
 

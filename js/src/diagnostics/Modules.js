@@ -81,7 +81,7 @@ function ModulesForm({ onReload, modules, setFormValue }) {
         if (postReportResponse.isSuccess) {
             onReload();
         } else if (postReportResponse.isError) {
-            setAlert("Cannot generate report");
+            setAlert(_("Cannot generate report"));
         }
     }, [onReload, postReportResponse, setAlert]);
 

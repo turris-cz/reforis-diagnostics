@@ -11,8 +11,7 @@ from pathlib import Path
 from flask import Blueprint, current_app, request, send_file, jsonify
 from flask_babel import gettext as _
 
-from reforis.foris_controller_api import APIError
-from reforis.foris_controller_api.utils import log_error, validate_json
+from reforis.foris_controller_api.utils import APIError, validate_json
 
 
 BASE_DIR = Path(__file__).parent
@@ -23,7 +22,7 @@ blueprint = Blueprint('Diagnostics', __name__, url_prefix='/diagnostics/api')
 # pylint: disable=invalid-name
 diagnostics = {
     'blueprint': blueprint,
-    'js_app_path': 'reforis_diagnostics/js/app.min.js',
+    'js_app_path': 'reforis_diagnostics/app.min.js',
     'translations_path': BASE_DIR / 'translations',
 }
 
@@ -40,36 +39,23 @@ def get_reports():
 
 @blueprint.route('/reports', methods=['POST'])
 def post_report():
-    try:
-        validate_json(request.json, {'modules': list})
-    except APIError as error:
-        return jsonify(error.data), error.status_code
-
+    validate_json(request.json, {'modules': list})
     response = current_app.backend.perform('diagnostics', 'prepare_diagnostic', request.json)
     if not response.get('diag_id'):
-        log_error(current_app, f'Invalid backend response for creating diagnostics report: {response}', request)
-        return jsonify(_('Cannot create diagnostics report')), HTTPStatus.INTERNAL_SERVER_ERROR
+        raise APIError(_('Cannot create diagnostics report'), HTTPStatus.INTERNAL_SERVER_ERROR)
     return jsonify(response), HTTPStatus.ACCEPTED
 
 
 @blueprint.route('/reports/<report_id>', methods=['GET'])
 def get_report_meta(report_id):
-    try:
-        return jsonify(_get_report_details(report_id))
-    except APIError as error:
-        return jsonify(error.data), error.status_code
+    return jsonify(_get_report_details(report_id))
 
 
 @blueprint.route('/reports/<report_id>/contents', methods=['GET'])
 def get_report_contents(report_id):
-    try:
-        report = _get_report_details(report_id)
-    except APIError as error:
-        return jsonify(error.data), error.status_code
-
+    report = _get_report_details(report_id)
     if report['status'] != 'ready':
-        return jsonify(_('Requested report is not ready yet')), HTTPStatus.CONFLICT
-
+        raise APIError(_('Requested report is not ready yet'), HTTPStatus.CONFLICT)
     return _send_diagnostics_file(report['path'], f'{report_id}.txt.gz')
 
 
@@ -100,6 +86,5 @@ def delete_report(report_id):
         {'diag_id': report_id},
     )
     if response.get('result') is not True:
-        log_error(current_app, f'Invalid backend response for deleting diagnostics report: {response}', request)
-        return jsonify(_('Cannot delete report')), HTTPStatus.INTERNAL_SERVER_ERROR
+        raise APIError(_('Cannot delete report'), HTTPStatus.INTERNAL_SERVER_ERROR)
     return '', HTTPStatus.NO_CONTENT

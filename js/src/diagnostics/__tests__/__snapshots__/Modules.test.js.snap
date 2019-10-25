@@ -51,12 +51,10 @@ exports[`<Modules /> should render modules 1`] = `
       style="font-weight: bold;"
     >
       <div
-        class=""
-        style="margin-bottom: 1rem;"
+        class="form-group"
       >
         <div
-          class="custom-control custom-checkbox"
-          style="margin-bottom: 0px;"
+          class="custom-control custom-checkbox "
         >
           <input
             class="custom-control-input"
@@ -79,12 +77,10 @@ exports[`<Modules /> should render modules 1`] = `
         class="col-sm-12 col-md-6 col-lg-4"
       >
         <div
-          class=""
-          style="margin-bottom: 1rem;"
+          class="form-group"
         >
           <div
-            class="custom-control custom-checkbox"
-            style="margin-bottom: 0px;"
+            class="custom-control custom-checkbox "
           >
             <input
               class="custom-control-input"
@@ -104,12 +100,10 @@ exports[`<Modules /> should render modules 1`] = `
         class="col-sm-12 col-md-6 col-lg-4"
       >
         <div
-          class=""
-          style="margin-bottom: 1rem;"
+          class="form-group"
         >
           <div
-            class="custom-control custom-checkbox"
-            style="margin-bottom: 0px;"
+            class="custom-control custom-checkbox "
           >
             <input
               class="custom-control-input"
@@ -129,12 +123,10 @@ exports[`<Modules /> should render modules 1`] = `
         class="col-sm-12 col-md-6 col-lg-4"
       >
         <div
-          class=""
-          style="margin-bottom: 1rem;"
+          class="form-group"
         >
           <div
-            class="custom-control custom-checkbox"
-            style="margin-bottom: 0px;"
+            class="custom-control custom-checkbox "
           >
             <input
               class="custom-control-input"
@@ -154,12 +146,10 @@ exports[`<Modules /> should render modules 1`] = `
         class="col-sm-12 col-md-6 col-lg-4"
       >
         <div
-          class=""
-          style="margin-bottom: 1rem;"
+          class="form-group"
         >
           <div
-            class="custom-control custom-checkbox"
-            style="margin-bottom: 0px;"
+            class="custom-control custom-checkbox "
           >
             <input
               class="custom-control-input"

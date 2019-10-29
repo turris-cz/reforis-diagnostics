@@ -21,12 +21,10 @@ exports[`<Diagnostics /> should handle error on loading reports 1`] = `
       style="font-weight: bold;"
     >
       <div
-        class=""
-        style="margin-bottom: 1rem;"
+        class="form-group"
       >
         <div
-          class="custom-control custom-checkbox"
-          style="margin-bottom: 0px;"
+          class="custom-control custom-checkbox "
         >
           <input
             class="custom-control-input"
@@ -49,12 +47,10 @@ exports[`<Diagnostics /> should handle error on loading reports 1`] = `
         class="col-sm-12 col-md-6 col-lg-4"
       >
         <div
-          class=""
-          style="margin-bottom: 1rem;"
+          class="form-group"
         >
           <div
-            class="custom-control custom-checkbox"
-            style="margin-bottom: 0px;"
+            class="custom-control custom-checkbox "
           >
             <input
               class="custom-control-input"
@@ -115,12 +111,10 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
       style="font-weight: bold;"
     >
       <div
-        class=""
-        style="margin-bottom: 1rem;"
+        class="form-group"
       >
         <div
-          class="custom-control custom-checkbox"
-          style="margin-bottom: 0px;"
+          class="custom-control custom-checkbox "
         >
           <input
             class="custom-control-input"
@@ -143,12 +137,10 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
         class="col-sm-12 col-md-6 col-lg-4"
       >
         <div
-          class=""
-          style="margin-bottom: 1rem;"
+          class="form-group"
         >
           <div
-            class="custom-control custom-checkbox"
-            style="margin-bottom: 0px;"
+            class="custom-control custom-checkbox "
           >
             <input
               class="custom-control-input"
@@ -285,12 +277,10 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
       style="font-weight: bold;"
     >
       <div
-        class=""
-        style="margin-bottom: 1rem;"
+        class="form-group"
       >
         <div
-          class="custom-control custom-checkbox"
-          style="margin-bottom: 0px;"
+          class="custom-control custom-checkbox "
         >
           <input
             class="custom-control-input"
@@ -313,12 +303,10 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
         class="col-sm-12 col-md-6 col-lg-4"
       >
         <div
-          class=""
-          style="margin-bottom: 1rem;"
+          class="form-group"
         >
           <div
-            class="custom-control custom-checkbox"
-            style="margin-bottom: 0px;"
+            class="custom-control custom-checkbox "
           >
             <input
               class="custom-control-input"

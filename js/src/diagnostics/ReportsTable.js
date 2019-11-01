@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
@@ -6,7 +6,7 @@ import {
     useAPIDelete,
     SpinnerElement,
     Button,
-    AlertContext,
+    useAlert,
     DownloadButton,
 } from "foris";
 
@@ -46,7 +46,7 @@ Report.propTypes = {
 };
 
 function Report({ report, onReload }) {
-    const setAlert = useContext(AlertContext);
+    const [setAlert] = useAlert();
 
     const [deleteReportResponse, deleteReport] = useAPIDelete(`${API_URLs.reports}/${report.diag_id}`);
     useEffect(() => {

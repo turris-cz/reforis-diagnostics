@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    AlertContext,
     Button,
     CheckBox,
     formFieldsSize,
@@ -10,6 +9,7 @@ import {
     useAPIGet,
     useAPIPost,
     useForm,
+    useAlert,
 } from "foris";
 
 import API_URLs from "API";
@@ -74,7 +74,7 @@ ModulesForm.propTypes = {
 };
 
 function ModulesForm({ onReload, modules, setFormValue }) {
-    const setAlert = useContext(AlertContext);
+    const [setAlert] = useAlert();
 
     const [postReportResponse, postReport] = useAPIPost(API_URLs.reports);
     useEffect(() => {

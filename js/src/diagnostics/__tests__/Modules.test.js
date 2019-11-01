@@ -6,25 +6,19 @@
  */
 
 import React from "react";
-import { render, waitForElement, getByText, getByLabelText, fireEvent, wait } from "customTestRender";
+import { render, waitForElement, getByText, getByLabelText, fireEvent, wait } from "foris/testUtils/customTestRender";
+import { mockSetAlert } from "foris/testUtils/alertContextMock";
 import mockAxios from 'jest-mock-axios';
-
-import { AlertContext } from "foris";
 
 import Modules from "../Modules";
 
 describe("<Modules />", () => {
     let componentContainer;
     const modules = ["foo_module", "bar_module", "fizz_module", "buzz_module"];
-    const handleReload = jest.fn(),
-        setAlert = jest.fn();
+    const handleReload = jest.fn();
 
     beforeEach(() => {
-        const { container } = render(
-            <AlertContext.Provider value={setAlert}>
-                <Modules onReload={handleReload} />
-            </AlertContext.Provider>
-        );
+        const { container } = render(<Modules onReload={handleReload} />);
         componentContainer = container;
     });
 
@@ -93,7 +87,7 @@ describe("<Modules />", () => {
         // Response to POST report
         mockAxios.mockError({response: {headers: {"content-type": "application/json"}}});
         await wait(() => {
-            expect(setAlert).toHaveBeenCalledWith("Cannot generate report");
+            expect(mockSetAlert).toHaveBeenCalledWith("Cannot generate report");
         });
     });
 });

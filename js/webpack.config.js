@@ -33,7 +33,10 @@ module.exports = () => ({
             },
         ],
     },
+    // Equal to peerDependencies in package.json
     externals: {
+        foris: "foris",
+        "prop-types": "PropTypes",
         react: "React",
         "react-dom": "ReactDOM",
     },

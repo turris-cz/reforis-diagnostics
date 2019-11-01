@@ -6,7 +6,9 @@
  */
 
 import React from "react";
-import { render, waitForElement, waitForElementToBeRemoved, fireEvent, getByText, getByTestId } from "customTestRender";
+import {
+    render, waitForElement, waitForElementToBeRemoved, fireEvent, getByText, getByTestId
+} from "foris/testUtils/customTestRender";
 import mockAxios from 'jest-mock-axios';
 
 import Diagnostics from "../Diagnostics";

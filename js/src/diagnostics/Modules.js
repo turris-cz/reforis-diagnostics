@@ -10,6 +10,7 @@ import {
     useAPIPost,
     useForm,
     useAlert,
+    API_STATE,
 } from "foris";
 
 import API_URLs from "API";
@@ -32,7 +33,7 @@ export default function Modules({ onReload }) {
     const [formState, setFormValue] = useForm(bypassValidator);
     const formData = formState.data;
     useEffect(() => {
-        if (getModulesResponse.data && !getModulesResponse.isError) {
+        if (getModulesResponse.state === API_STATE.SUCCESS) {
             const modules = getModulesResponse.data.modules.reduce(
                 (modulesAccumulator, module) => {
                     modulesAccumulator[module] = false;
@@ -45,9 +46,9 @@ export default function Modules({ onReload }) {
     }, [getModulesResponse, setFormValue]);
 
     let modulesElement;
-    if (getModulesResponse.isError) {
+    if (getModulesResponse.state === API_STATE.ERROR) {
         modulesElement = <p className="text-center text-danger">{_("An error occurred during loading modules")}</p>;
-    } else if (getModulesResponse.isLoading || !formData) {
+    } else if (!formData) {
         modulesElement = <Spinner className="my-3 text-center" />;
     } else {
         modulesElement = (
@@ -78,9 +79,9 @@ function ModulesForm({ onReload, modules, setFormValue }) {
 
     const [postReportResponse, postReport] = useAPIPost(API_URLs.reports);
     useEffect(() => {
-        if (postReportResponse.isSuccess) {
+        if (postReportResponse.state === API_STATE.SUCCESS) {
             onReload();
-        } else if (postReportResponse.isError) {
+        } else if (postReportResponse.state === API_STATE.ERROR) {
             setAlert(_("Cannot generate report"));
         }
     }, [onReload, postReportResponse, setAlert]);

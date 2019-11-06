@@ -9,6 +9,7 @@ import React from "react";
 import {
     render, waitForElement, waitForElementToBeRemoved, fireEvent, getByText, getByTestId
 } from "foris/testUtils/customTestRender";
+import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from 'jest-mock-axios';
 
 import Diagnostics from "../Diagnostics";
@@ -45,7 +46,7 @@ describe("<Diagnostics />", () => {
 
         expect(mockAxios.get).toBeCalledWith("/reforis/diagnostics/api/reports", expect.anything());
         // Response to GET reports
-        mockAxios.mockError({response: {}});
+        mockJSONError();
 
         await waitForElement(() => getByText(componentContainer, "Reports"));
         expect(componentContainer).toMatchSnapshot();

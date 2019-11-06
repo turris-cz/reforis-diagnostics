@@ -8,6 +8,7 @@ import {
     Button,
     useAlert,
     DownloadButton,
+    API_STATE,
 } from "foris";
 
 import API_URLs from "API";
@@ -50,9 +51,9 @@ function Report({ report, onReload }) {
 
     const [deleteReportResponse, deleteReport] = useAPIDelete(`${API_URLs.reports}/${report.diag_id}`);
     useEffect(() => {
-        if (deleteReportResponse.isSuccess) {
+        if (deleteReportResponse.state === API_STATE.SUCCESS) {
             onReload();
-        } else if (deleteReportResponse.isError) {
+        } else if (deleteReportResponse.state === API_STATE.ERROR) {
             setAlert(_("Cannot delete report"));
         }
     }, [deleteReportResponse, onReload, setAlert]);
@@ -66,13 +67,13 @@ function Report({ report, onReload }) {
     }, [report, getReport]);
     // Repeatedly check status until it's "ready"
     useEffect(() => {
-        if (!getReportResponse.isLoading && getReportResponse.data) {
+        if (getReportResponse.state === API_STATE.SUCCESS) {
             if (getReportResponse.data.status !== "ready") {
                 const timeout = setTimeout(() => getReport(), REPORT_REFRESH_INTERVAL);
                 return () => clearTimeout(timeout);
             }
             onReload();
-        } else if (getReportResponse.isError) {
+        } else if (getReportResponse.state === API_STATE.ERROR) {
             setAlert(_("Cannot fetch report data"));
         }
     }, [getReportResponse, getReport, onReload, setAlert]);

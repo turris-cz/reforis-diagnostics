@@ -8,6 +8,7 @@
 import React from "react";
 import { render, waitForElement, getByText, getByLabelText, fireEvent, wait } from "foris/testUtils/customTestRender";
 import { mockSetAlert } from "foris/testUtils/alertContextMock";
+import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from 'jest-mock-axios';
 
 import Modules from "../Modules";
@@ -35,7 +36,7 @@ describe("<Modules />", () => {
 
     it("should handle error on fetching modules", async () => {
         expect(mockAxios.get).toBeCalledWith("/reforis/diagnostics/api/modules", expect.anything());
-        mockAxios.mockError({response: {}});
+        mockJSONError();
         await waitForElement(() => getByText(componentContainer, "Modules"));
         expect(componentContainer).toMatchSnapshot();
     });
@@ -85,7 +86,7 @@ describe("<Modules />", () => {
         );
 
         // Response to POST report
-        mockAxios.mockError({response: {headers: {"content-type": "application/json"}}});
+        mockJSONError();
         await wait(() => {
             expect(mockSetAlert).toHaveBeenCalledWith("Cannot generate report");
         });

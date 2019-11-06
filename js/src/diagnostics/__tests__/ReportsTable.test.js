@@ -8,6 +8,7 @@
 import React from "react";
 import { render, getByText, fireEvent, wait } from "foris/testUtils/customTestRender";
 import { mockSetAlert } from "foris/testUtils/alertContextMock";
+import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from 'jest-mock-axios';
 
 import ReportsTable from "../ReportsTable";
@@ -47,7 +48,7 @@ describe("<ReportsTable />", () => {
 
     it("should handle error on fetching reports", async () => {
         createTable([{diag_id: 1234, status: "pending"}])
-        mockAxios.mockError({response: {}});
+        mockJSONError();
         await wait(() => {
             expect(mockSetAlert).toHaveBeenCalledWith("Cannot fetch report data");
         });
@@ -66,7 +67,7 @@ describe("<ReportsTable />", () => {
         const container = createTable([{diag_id: 1234, status: "ready"}])
         fireEvent.click(getByText(container, "Delete"));
         // Response to DELETE report
-        mockAxios.mockError({response: {headers: {"content-type": "application/json"}}});
+        mockJSONError();
         await wait(() => {
             expect(mockSetAlert).toHaveBeenCalledWith("Cannot delete report");
         });

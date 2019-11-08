@@ -85,7 +85,7 @@ exports[`<Diagnostics /> should handle error on loading reports 1`] = `
   <p
     class="text-center text-danger"
   >
-    An error occurred during loading reports
+    An error occurred while fetching data.
   </p>
 </div>
 `;

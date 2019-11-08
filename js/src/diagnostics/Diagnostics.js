@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { Spinner, useAPIGet, API_STATE } from "foris";
+import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
 
 import API_URLs from "API";
 import Modules from "./Modules";
@@ -12,22 +12,19 @@ export default function Diagnostics() {
         getReports();
     }, [getReports]);
 
-    let reportsComponent;
-    if (getReportsResponse.state === API_STATE.SUCCESS) {
-        reportsComponent = <ReportsTable reports={getReportsResponse.data} onReload={getReports} />;
-    } else if (getReportsResponse.state === API_STATE.ERROR) {
-        reportsComponent = <p className="text-center text-danger">{_("An error occurred during loading reports")}</p>;
-    } else {
-        reportsComponent = <Spinner className="my-3 text-center" />;
-    }
-
     return (
         <>
             <h1>{_("Diagnostics")}</h1>
             <p>{_("Generate a diagnostics report to simplify debugging some problems related to the router's functionality.")}</p>
             <Modules onReload={getReports} />
             <h3 className="mt-3">{_("Reports")}</h3>
-            {reportsComponent}
+            <ReportsTableWithErrorAndSpinner
+                apiState={getReportsResponse.state}
+                reports={getReportsResponse.data}
+                onReload={getReports}
+            />
         </>
     );
 }
+
+const ReportsTableWithErrorAndSpinner = withSpinnerOnSending(withErrorMessage(ReportsTable));

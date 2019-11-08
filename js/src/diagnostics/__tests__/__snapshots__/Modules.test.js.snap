@@ -31,7 +31,7 @@ exports[`<Modules /> should handle error on fetching modules 1`] = `
   <p
     class="text-center text-danger"
   >
-    An error occurred during loading modules
+    An error occurred while fetching data.
   </p>
 </div>
 `;

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    Button, CheckBox, formFieldsSize, useAPIPost, useAlert, API_STATE,
+    API_STATE, Button, CheckBox, formFieldsSize, useAlert, useAPIPost,
 } from "foris";
 
 import API_URLs from "API";
@@ -10,10 +10,13 @@ import API_URLs from "API";
 ModulesForm.propTypes = {
     onReload: PropTypes.func.isRequired,
     modules: PropTypes.object.isRequired,
+    descriptions: PropTypes.object.isRequired,
     setFormValue: PropTypes.func.isRequired,
 };
 
-export default function ModulesForm({ onReload, modules, setFormValue }) {
+export default function ModulesForm({
+    onReload, modules, descriptions, setFormValue,
+}) {
     const [setAlert] = useAlert();
 
     const [postReportResponse, postReport] = useAPIPost(API_URLs.reports);
@@ -45,6 +48,7 @@ export default function ModulesForm({ onReload, modules, setFormValue }) {
                             onChange={
                                 setFormValue((value) => ({ modules: { [name]: { $set: value } } }))
                             }
+                            helpText={descriptions[name]}
                         />
                     </div>
                 ))}

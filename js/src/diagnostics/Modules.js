@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    useAPIGet, useForm, API_STATE, withErrorMessage, withSpinner,
+    API_STATE, useAPIGet, useForm, withErrorMessage, withSpinner,
 } from "foris";
 
 import API_URLs from "API";
@@ -23,16 +23,24 @@ export default function Modules({ onReload }) {
     useEffect(() => {
         if (getModulesResponse.state === API_STATE.SUCCESS) {
             const modules = getModulesResponse.data.modules.reduce(
-                (modulesAccumulator, module) => {
-                    modulesAccumulator[module] = false;
-                    return modulesAccumulator;
-                },
+                (modulesAccumulator, module) => ({
+                    ...modulesAccumulator,
+                    [module.module_id]: false,
+                }),
                 {},
             );
             setFormValue((value) => ({ $set: { modules: value } }))({ target: { value: modules } });
         }
     }, [getModulesResponse, setFormValue]);
-
+    const descriptions = getModulesResponse.data && getModulesResponse.data.modules.reduce(
+        (descriptionsAccumulator, module) => (
+            {
+                ...descriptionsAccumulator,
+                [module.module_id]: module.description,
+            }
+        ),
+        {},
+    );
     return (
         <>
             <h3>{_("Modules")}</h3>
@@ -40,6 +48,7 @@ export default function Modules({ onReload }) {
                 apiState={getModulesResponse.state}
                 onReload={onReload}
                 modules={formData.modules}
+                descriptions={descriptions}
                 setFormValue={setFormValue}
             />
         </>

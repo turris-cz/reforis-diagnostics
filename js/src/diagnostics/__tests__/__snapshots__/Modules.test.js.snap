@@ -92,6 +92,11 @@ exports[`<Modules /> should render modules 1`] = `
               for="2"
             >
               foo_module
+              <small
+                class="form-text text-muted"
+              >
+                Boo module description.
+              </small>
             </label>
           </div>
         </div>
@@ -115,6 +120,11 @@ exports[`<Modules /> should render modules 1`] = `
               for="3"
             >
               bar_module
+              <small
+                class="form-text text-muted"
+              >
+                Bar module description.
+              </small>
             </label>
           </div>
         </div>
@@ -138,6 +148,11 @@ exports[`<Modules /> should render modules 1`] = `
               for="4"
             >
               fizz_module
+              <small
+                class="form-text text-muted"
+              >
+                Fizz module description.
+              </small>
             </label>
           </div>
         </div>
@@ -161,6 +176,11 @@ exports[`<Modules /> should render modules 1`] = `
               for="5"
             >
               buzz_module
+              <small
+                class="form-text text-muted"
+              >
+                Buzz module description.
+              </small>
             </label>
           </div>
         </div>

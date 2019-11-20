@@ -62,6 +62,11 @@ exports[`<Diagnostics /> should handle error on loading reports 1`] = `
               for="2"
             >
               foobar_module
+              <small
+                class="form-text text-muted"
+              >
+                foobar_module_description
+              </small>
             </label>
           </div>
         </div>
@@ -152,6 +157,11 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
               for="2"
             >
               foobar_module
+              <small
+                class="form-text text-muted"
+              >
+                foobar_module_description
+              </small>
             </label>
           </div>
         </div>
@@ -318,6 +328,11 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
               for="2"
             >
               foobar_module
+              <small
+                class="form-text text-muted"
+              >
+                foobar_module_description
+              </small>
             </label>
           </div>
         </div>

@@ -10,7 +10,7 @@
   "description": "Diagnostics plugins for Foris.",
   "main": "./src/app.js",
   "dependencies": {
-    "foris": "1.3.2-beta.fbaa73e3"
+    "foris": "1.3.2"
   },
   "peerDependencies": {
     "prop-types": "15.7.2",

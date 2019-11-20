@@ -53,7 +53,6 @@ prepare-dev:
 
 install:
 	opkg update
-	opkg install git git-http
 	$(ROUTER_PYTHON) -m pip install -e .
 	ln -sf /tmp/reforis-diagnostics/reforis_static/reforis_diagnostics /tmp/reforis/reforis_static/
 	/etc/init.d/lighttpd restart

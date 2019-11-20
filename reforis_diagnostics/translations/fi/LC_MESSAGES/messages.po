@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-22 17:12+0200\n"
+"POT-Creation-Date: 2019-11-20 15:20+0100\n"
 "PO-Revision-Date: 2019-10-02 16:28+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fi\n"
@@ -18,81 +18,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:31
+#: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:24
 msgid "Diagnostics"
 msgstr ""
 
-#: js/src/diagnostics/Diagnostics.js:23
-msgid "An error occurred during loading reports"
-msgstr ""
-
-#: js/src/diagnostics/Diagnostics.js:32
+#: js/src/diagnostics/Diagnostics.js:25
 msgid ""
 "Generate a diagnostics report to simplify debugging some problems related"
 " to the router's functionality."
 msgstr ""
 
-#: js/src/diagnostics/Diagnostics.js:34
+#: js/src/diagnostics/Diagnostics.js:27
 msgid "Reports"
 msgstr ""
 
-#: js/src/diagnostics/Modules.js:49
-msgid "An error occurred during loading modules"
-msgstr ""
-
-#: js/src/diagnostics/Modules.js:64
+#: js/src/diagnostics/Modules.js:53
 msgid "Modules"
 msgstr ""
 
-#: js/src/diagnostics/Modules.js:84
+#: js/src/diagnostics/ModulesForm.js:34
 msgid "Cannot generate report"
 msgstr ""
 
-#: js/src/diagnostics/Modules.js:116
+#: js/src/diagnostics/ModulesForm.js:67
 msgid "Select modules which you want to include in the report."
 msgstr ""
 
-#: js/src/diagnostics/Modules.js:120
+#: js/src/diagnostics/ModulesForm.js:71
 msgid "Select all"
 msgstr ""
 
-#: js/src/diagnostics/Modules.js:135
+#: js/src/diagnostics/ModulesForm.js:86
 msgid "Generate report"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:24
+#: js/src/diagnostics/ReportsTable.js:23
 msgid "There are no reports available."
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:31
+#: js/src/diagnostics/ReportsTable.js:30
 msgid "ID"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:32 js/src/diagnostics/ReportsTable.js:87
+#: js/src/diagnostics/ReportsTable.js:31 js/src/diagnostics/ReportsTable.js:66
 msgid "Download"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:33 js/src/diagnostics/ReportsTable.js:90
+#: js/src/diagnostics/ReportsTable.js:32 js/src/diagnostics/ReportsTable.js:77
 msgid "Delete"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:56 reforis_diagnostics/__init__.py:104
-msgid "Cannot delete report"
+#: js/src/diagnostics/hooks.js:39
+msgid "Cannot fetch report data."
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:76
-msgid "Cannot fetch report data"
+#: js/src/diagnostics/hooks.js:54
+msgid "Cannot delete report."
 msgstr ""
 
-#: reforis_diagnostics/__init__.py:51
+#: reforis_diagnostics/__init__.py:45
 msgid "Cannot create diagnostics report"
 msgstr ""
 
-#: reforis_diagnostics/__init__.py:71
+#: reforis_diagnostics/__init__.py:58
 msgid "Requested report is not ready yet"
 msgstr ""
 
-#: reforis_diagnostics/__init__.py:80
+#: reforis_diagnostics/__init__.py:66
 msgid "Requested report does not exist"
 msgstr ""
+
+#: reforis_diagnostics/__init__.py:89
+msgid "Cannot delete report"
+msgstr ""
+
+#~ msgid "An error occurred during loading reports"
+#~ msgstr ""
+
+#~ msgid "An error occurred during loading modules"
+#~ msgstr ""
+
+#~ msgid "Cannot fetch report data"
+#~ msgstr ""
 

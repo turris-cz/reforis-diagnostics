@@ -14,9 +14,7 @@ import API_URLs from "../API";
 
 const REPORT_REFRESH_INTERVAL = 700; // milliseconds
 
-const REPORT_STATES = {
-    ready: "ready",
-};
+const REPORT_READY = "ready";
 
 export function useReportIsReady(report) {
     const [setAlert] = useAlert();
@@ -24,7 +22,7 @@ export function useReportIsReady(report) {
     const [reportIsReady, setReportIsReady] = useState(false);
     // Initial check for "ready" status.
     useEffect(() => {
-        setReportIsReady(report.status === REPORT_STATES.ready);
+        setReportIsReady(report.status === REPORT_READY);
     }, [report]);
 
     // Repeatedly check status until it's "ready".
@@ -36,7 +34,7 @@ export function useReportIsReady(report) {
 
     useEffect(() => {
         if (reportState.state === API_STATE.SUCCESS) {
-            setReportIsReady(reportState.data.status === REPORT_STATES.ready);
+            setReportIsReady(reportState.data.status === REPORT_READY);
         } else if (reportState.state === API_STATE.ERROR) {
             setAlert(_("Cannot fetch report data."));
         }

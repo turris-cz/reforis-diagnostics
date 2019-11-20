@@ -1,19 +1,17 @@
-import React, { useEffect } from "react";
+/*
+ * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See /LICENSE for more information.
+ */
+
+import React from "react";
 import PropTypes from "prop-types";
 
-import {
-    useAPIGet,
-    useAPIDelete,
-    SpinnerElement,
-    Button,
-    useAlert,
-    DownloadButton,
-    API_STATE,
-} from "foris";
+import { Button, DownloadButton, SpinnerElement } from "foris";
 
 import API_URLs from "API";
-
-const REPORT_REFRESH_INTERVAL = 500; // milliseconds
+import { useDeleteReport, useReportIsReady } from "./hooks";
 
 ReportsTable.propTypes = {
     reports: PropTypes.array.isRequired,
@@ -33,62 +31,53 @@ export default function ReportsTable({ reports, onReload }) {
                     <th scope="col" aria-label={_("Download")} />
                     <th scope="col" aria-label={_("Delete")} />
                 </tr>
-                {reports.map(
-                    (report) => <Report key={report.diag_id} report={report} onReload={onReload} />,
-                )}
+                {reports.map((report) => (
+                    <ReportRow
+                        key={report.diag_id}
+                        report={report}
+                        onReload={onReload}
+                    />
+                ))}
             </tbody>
         </table>
     );
 }
 
-Report.propTypes = {
+ReportRow.propTypes = {
     report: PropTypes.object.isRequired,
     onReload: PropTypes.func.isRequired,
 };
 
-function Report({ report, onReload }) {
-    const [setAlert] = useAlert();
-
-    const [deleteReportResponse, deleteReport] = useAPIDelete(`${API_URLs.reports}/${report.diag_id}`);
-    useEffect(() => {
-        if (deleteReportResponse.state === API_STATE.SUCCESS) {
-            onReload();
-        } else if (deleteReportResponse.state === API_STATE.ERROR) {
-            setAlert(_("Cannot delete report"));
-        }
-    }, [deleteReportResponse, onReload, setAlert]);
-
-    const [getReportResponse, getReport] = useAPIGet(`${API_URLs.reports}/${report.diag_id}`);
-    // Initial check for "ready" status
-    useEffect(() => {
-        if (report.status !== "ready") {
-            getReport();
-        }
-    }, [report, getReport]);
-    // Repeatedly check status until it's "ready"
-    useEffect(() => {
-        if (getReportResponse.state === API_STATE.SUCCESS) {
-            if (getReportResponse.data.status !== "ready") {
-                const timeout = setTimeout(() => getReport(), REPORT_REFRESH_INTERVAL);
-                return () => clearTimeout(timeout);
-            }
-            onReload();
-        } else if (getReportResponse.state === API_STATE.ERROR) {
-            setAlert(_("Cannot fetch report data"));
-        }
-    }, [getReportResponse, getReport, onReload, setAlert]);
-
-    const isReady = report.status === "ready";
+function ReportRow({ report, onReload }) {
+    const isReady = useReportIsReady(report);
+    const deleteReport = useDeleteReport(report.diag_id, onReload);
 
     return (
         <tr>
-            <td className="align-middle">{report.diag_id}</td>
-            <td className="text-center">
-                {isReady
-                    ? <DownloadButton href={`${API_URLs.reports}/${report.diag_id}/contents`}>{_("Download")}</DownloadButton>
-                    : <SpinnerElement />}
+            <td className="align-middle">
+                {report.diag_id}
             </td>
-            <td className="text-right">{isReady && <Button className="btn-danger" onClick={deleteReport}>{_("Delete")}</Button>}</td>
+
+            <td className="text-center">
+                {isReady ? (
+                    <DownloadButton
+                        href={`${API_URLs.reports}/${report.diag_id}/contents`}
+                    >
+                        {_("Download")}
+                    </DownloadButton>
+                ) : <SpinnerElement />}
+            </td>
+
+            <td className="text-right">
+                {isReady && (
+                    <Button
+                        className="btn-danger"
+                        onClick={deleteReport}
+                    >
+                        {_("Delete")}
+                    </Button>
+                )}
+            </td>
         </tr>
     );
 }

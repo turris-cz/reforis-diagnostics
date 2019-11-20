@@ -6,7 +6,15 @@
  */
 
 import React from "react";
-import { render, getByText, fireEvent, wait } from "foris/testUtils/customTestRender";
+import {
+    render,
+    getByText,
+    fireEvent,
+    wait,
+    waitForElement,
+    getByTestId,
+    act
+} from "foris/testUtils/customTestRender";
 import { mockSetAlert } from "foris/testUtils/alertContextMock";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from 'jest-mock-axios';
@@ -22,41 +30,47 @@ describe("<ReportsTable />", () => {
     }
 
     it("should render reports", async () => {
-        const container = createTable([{diag_id: 1234, status: "ready"}])
+        const container = createTable([{diag_id: 1234, status: "ready"}]);
+        await waitForElement(() => getByTestId(container, "reports-table"));
         expect(container).toMatchSnapshot();
     });
 
     it("should handle lack of reports", async () => {
-        const container = createTable([])
+        const container = createTable([]);
         expect(container).toMatchSnapshot();
     });
 
     it("should display spinner when report is not ready", async () => {
-        const container = createTable([{diag_id: 1234, status: "pending"}])
+        const container = createTable([{diag_id: 1234, status: "pending"}]);
+        await waitForElement(() => getByTestId(container, "reports-table"));
+
         expect(container).toMatchSnapshot();
 
-        // Initial check for status
-        expect(mockAxios.get).toBeCalledWith("/reforis/diagnostics/api/reports/1234", expect.anything());
-        mockAxios.mockResponse({data: {diag_id: 1234, status: "pending"}});
-        // Repeated check for status
         await wait(
-            () => expect(mockAxios.get).nthCalledWith(2, "/reforis/diagnostics/api/reports/1234", expect.anything())
+            () => expect(mockAxios.get).toBeCalledWith( "/reforis/diagnostics/api/reports/1234", expect.anything())
         );
-        mockAxios.mockResponse({data: {diag_id: 1234, status: "ready"}});
-        await wait(() => expect(handleReload).toBeCalledTimes(1));
+        await waitForElement(() => getByTestId(container, "reports-table"));
+
+        await act(async ()=>{
+            mockAxios.mockResponse({data: {diag_id: 1234, status: "ready"}});
+        });
     });
 
     it("should handle error on fetching reports", async () => {
-        createTable([{diag_id: 1234, status: "pending"}])
-        mockJSONError();
+        const container = createTable([{diag_id: 1234, status: "pending"}]);
+        await wait(
+            () => expect(mockAxios.get).toBeCalledWith( "/reforis/diagnostics/api/reports/1234", expect.anything())
+        );
+        act(()=>mockJSONError());
         await wait(() => {
-            expect(mockSetAlert).toHaveBeenCalledWith("Cannot fetch report data");
+            expect(mockSetAlert).toHaveBeenCalledWith("Cannot fetch report data.");
         });
     });
 
     it("should delete report", async () => {
-        const container = createTable([{diag_id: 1234, status: "ready"}])
-        fireEvent.click(getByText(container, "Delete"));
+        const container = createTable([{diag_id: 1234, status: "ready"}]);
+        const deleteButton = await waitForElement(()=> getByText(container, "Delete"));
+        fireEvent.click(deleteButton);
         expect(mockAxios.delete).toHaveBeenCalledWith("/reforis/diagnostics/api/reports/1234", expect.anything());
         // Response to DELETE report
         mockAxios.mockResponse({});
@@ -64,12 +78,13 @@ describe("<ReportsTable />", () => {
     });
 
     it("should handle delete error", async () => {
-        const container = createTable([{diag_id: 1234, status: "ready"}])
-        fireEvent.click(getByText(container, "Delete"));
+        const container = createTable([{diag_id: 1234, status: "ready"}]);
+        const deleteButton = await waitForElement(()=> getByText(container, "Delete"));
+        fireEvent.click(deleteButton);
         // Response to DELETE report
         mockJSONError();
         await wait(() => {
-            expect(mockSetAlert).toHaveBeenCalledWith("Cannot delete report");
+            expect(mockSetAlert).toHaveBeenCalledWith("Cannot delete report.");
         });
     });
 });

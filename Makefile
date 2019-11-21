@@ -94,5 +94,5 @@ clean:
 	find . -name '*.pyc' -exec rm -f {} +
 	rm -rf $(VENV_NAME) *.eggs *.egg-info dist build .cache
 	rm -rf dist build *.egg-info
-	rm -rf $(JS_DIR)/node_modules/ reforis_static/diagnostics/app.min.js
+	rm -rf $(JS_DIR)/node_modules/ reforis_static/reforis_diagnostics/js/app.min.js
 	$(ROUTER_PYTHON) -m pip uninstall -y reforis_diagnostics

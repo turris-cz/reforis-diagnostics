@@ -1,11 +1,15 @@
+#  Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#
+#  This is free software, licensed under the GNU General Public License v3.
+#  See /LICENSE for more information.
+
 from http import HTTPStatus
 
-from .utils import get_mocked_diagnostics_client
+from reforis.test_utils import mock_backend_response
 
 
-def test_get_modules(app):
-    backend_response = {'key': 'value'}
-    with get_mocked_diagnostics_client(app, backend_response) as client:
-        response = client.get('/diagnostics/api/modules')
+@mock_backend_response({'diagnostics': {'list_modules': ['1', '2']}})
+def test_get_modules(client):
+    response = client.get('/diagnostics/api/modules')
     assert response.status_code == HTTPStatus.OK
-    assert response.json == backend_response
+    assert response.json == ['1', '2']

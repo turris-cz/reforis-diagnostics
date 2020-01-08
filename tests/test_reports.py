@@ -1,120 +1,142 @@
+#  Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#
+#  This is free software, licensed under the GNU General Public License v3.
+#  See /LICENSE for more information.
+
 from http import HTTPStatus
 from unittest.mock import mock_open, patch
 
-from .utils import get_mocked_diagnostics_client
+from reforis.test_utils import mock_backend_response
 
 
-def test_get_reports(app):
-    backend_response = {'diagnostics': []}
-    with get_mocked_diagnostics_client(app, backend_response) as client:
-        response = client.get('/diagnostics/api/reports')
+@mock_backend_response({'diagnostics': {'list_diagnostics': {'diagnostics': []}}})
+def test_get_reports(client):
+    response = client.get('/diagnostics/api/reports')
     assert response.status_code == HTTPStatus.OK
-    assert response.json == backend_response['diagnostics']
+    assert response.json == []
 
 
-def test_post_reports(app):
-    backend_response = {'diag_id': '1234ABCD'}
-    with get_mocked_diagnostics_client(app, backend_response) as client:
-        response = client.post(
-            '/diagnostics/api/reports',
-            json={'modules': ['foobar_module']},
-        )
+@mock_backend_response({'diagnostics': {'prepare_diagnostic': {'diag_id': '1234ABCD'}}})
+def test_post_reports(client):
+    response = client.post(
+        '/diagnostics/api/reports',
+        json={'modules': ['foobar_module']},
+    )
     assert response.status_code == HTTPStatus.ACCEPTED
-    assert response.json == backend_response
+    assert response.json == {'diag_id': '1234ABCD'}
 
 
-def test_post_reports_invalid_json(app):
-    with get_mocked_diagnostics_client(app, {}) as client:
-        response = client.post('/diagnostics/api/reports')
+@mock_backend_response({'diagnostics': {'prepare_diagnostic': {}}})
+def test_post_reports_invalid_response(client):
+    response = client.post('/diagnostics/api/reports')
     assert response.status_code == HTTPStatus.BAD_REQUEST
     assert response.json == 'Invalid JSON'
 
 
-def test_post_reports_missing_data(app):
-    with get_mocked_diagnostics_client(app, {}) as client:
-        response = client.post(
-            '/diagnostics/api/reports',
-            json={'different_field': 'some_value'},
-        )
+@mock_backend_response({'diagnostics': {'prepare_diagnostic': {}}})
+def test_post_reports_missing_data(client):
+    response = client.post(
+        '/diagnostics/api/reports',
+        json={'different_field': 'some_value'},
+    )
     assert response.status_code == HTTPStatus.BAD_REQUEST
     assert response.json == {'modules': 'Missing data for required field.'}
 
 
-def test_post_reports_invalid_data(app):
-    with get_mocked_diagnostics_client(app, {}) as client:
-        response = client.post(
-            '/diagnostics/api/reports',
-            json={'modules': 1234},
-        )
+@mock_backend_response({'diagnostics': {'prepare_diagnostic': {}}})
+def test_post_reports_invalid_data(client):
+    response = client.post(
+        '/diagnostics/api/reports',
+        json={'modules': 1234},
+    )
     assert response.status_code == HTTPStatus.BAD_REQUEST
     assert response.json == {'modules': 'Expected data of type: list'}
 
 
-def test_post_reports_backend_error(app):
-    backend_response = {'something_else': 'meaningless_value'}
-    with get_mocked_diagnostics_client(app, backend_response) as client:
-        response = client.post('/diagnostics/api/reports', json={'modules': ['foobar_module']})
+@mock_backend_response({'diagnostics': {'prepare_diagnostic': {'something_else': 'meaningless_value'}}})
+def test_post_reports_backend_error(client):
+    response = client.post('/diagnostics/api/reports', json={'modules': ['foobar_module']})
     assert response.status_code == HTTPStatus.INTERNAL_SERVER_ERROR
     assert response.json == 'Cannot create diagnostics report'
 
 
-def test_get_report_meta(app):
+@mock_backend_response({
+    'diagnostics': {
+        'list_diagnostics': {
+            'diagnostics': [{'diag_id': '1234'}]
+        }
+    }
+})
+def test_get_report_meta(client):
     backend_response = {'diagnostics': [{'diag_id': '1234'}]}
-    with get_mocked_diagnostics_client(app, backend_response) as client:
-        response = client.get('/diagnostics/api/reports/1234')
+    response = client.get('/diagnostics/api/reports/1234')
     assert response.status_code == HTTPStatus.OK
     assert response.json == backend_response['diagnostics'][0]
 
 
-def test_get_report_meta_not_found(app):
-    backend_response = {'diagnostics': [{'diag_id': '5678'}]}
-    with get_mocked_diagnostics_client(app, backend_response) as client:
-        response = client.get('/diagnostics/api/reports/1234')
+@mock_backend_response({
+    'diagnostics': {
+        'list_diagnostics': {
+            'diagnostics': [{'diag_id': '5678'}]
+        }
+    }
+})
+def test_get_report_meta_not_found(client):
+    response = client.get('/diagnostics/api/reports/1234')
     assert response.status_code == HTTPStatus.NOT_FOUND
     assert response.json == 'Requested report does not exist'
 
 
-def test_get_report_contents(app):
-    backend_response = {
-        'diagnostics': [
-            {'diag_id': '1234', 'status': 'ready', 'path': 'path: /tmp/diagnostics-2019-09-17_c907711c.out'}
-        ]
+@mock_backend_response({
+    'diagnostics': {
+        'list_diagnostics': {
+            'diagnostics': [
+                {'diag_id': '1234', 'status': 'ready', 'path': 'path: /tmp/diagnostics-2019-09-17_c907711c.out'}
+            ]
+        }
     }
-    with get_mocked_diagnostics_client(app, backend_response) as client:
-        opener = mock_open(read_data=b'DATA')
-        with patch('reforis_diagnostics.open', opener):
-            response = client.get('/diagnostics/api/reports/1234/contents')
+})
+def test_get_report_contents(client):
+    opener = mock_open(read_data=b'DATA')
+    with patch('reforis_diagnostics.open', opener):
+        response = client.get('/diagnostics/api/reports/1234/contents')
     assert response.status_code == HTTPStatus.OK
     # Expect to receive some gzipped content
     assert response.data
 
 
-def test_get_report_contents_not_ready(app):
-    backend_response = {'diagnostics': [{'diag_id': '5678', 'status': 'pending'}]}
-    with get_mocked_diagnostics_client(app, backend_response) as client:
-        response = client.get('/diagnostics/api/reports/5678/contents')
+@mock_backend_response({
+    'diagnostics': {
+        'list_diagnostics': {
+            'diagnostics': [{'diag_id': '5678', 'status': 'pending'}]
+        }
+    }
+})
+def test_get_report_contents_not_ready(client):
+    response = client.get('/diagnostics/api/reports/5678/contents')
     assert response.status_code == HTTPStatus.CONFLICT
     assert response.json == 'Requested report is not ready yet'
 
 
-def test_get_report_contents_not_found(app):
-    backend_response = {'diagnostics': [{'diag_id': '5678'}]}
-    with get_mocked_diagnostics_client(app, backend_response) as client:
-        response = client.get('/diagnostics/api/reports/1234/contents')
+@mock_backend_response({
+    'diagnostics': {
+        'list_diagnostics': {'diagnostics': [{'diag_id': '5678'}]}
+    }
+})
+def test_get_report_contents_not_found(client):
+    response = client.get('/diagnostics/api/reports/1234/contents')
     assert response.status_code == HTTPStatus.NOT_FOUND
     assert response.json == 'Requested report does not exist'
 
 
-def test_delete_report(app):
-    backend_response = {'result': True}
-    with get_mocked_diagnostics_client(app, backend_response) as client:
-        response = client.delete('/diagnostics/api/reports/1234')
+@mock_backend_response({'diagnostics': {'remove_diagnostic': {'result': True}}})
+def test_delete_report(client):
+    response = client.delete('/diagnostics/api/reports/1234')
     assert response.status_code == HTTPStatus.NO_CONTENT
 
 
-def test_delete_report_backend_error(app):
-    backend_response = {'result': False}
-    with get_mocked_diagnostics_client(app, backend_response) as client:
-        response = client.delete('/diagnostics/api/reports/1234')
+@mock_backend_response({'diagnostics': {'remove_diagnostic': {'result': False}}})
+def test_delete_report_backend_error(client):
+    response = client.delete('/diagnostics/api/reports/1234')
     assert response.status_code == HTTPStatus.INTERNAL_SERVER_ERROR
     assert response.json == 'Cannot delete report'

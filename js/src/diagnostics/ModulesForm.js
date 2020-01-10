@@ -40,7 +40,7 @@ export default function ModulesForm({
 
     function generateReport(event) {
         event.preventDefault();
-        postReport({ modules: selectedModules });
+        postReport({ data: { modules: selectedModules } });
     }
 
     const checkboxes = (
@@ -51,7 +51,6 @@ export default function ModulesForm({
                         <CheckBox
                             label={name}
                             checked={modules[name]}
-                            useDefaultSize={false}
                             onChange={
                                 setFormValue((value) => ({ modules: { [name]: { $set: value } } }))
                             }
@@ -71,20 +70,21 @@ export default function ModulesForm({
                         label={_("Select all")}
                         checked={Object.keys(modules)
                             .every((name) => modules[name] === true)}
-                        useDefaultSize={false}
                         onChange={setFormValue(
                             (value) => ({ modules: updateAllValues(modules, value) }),
                         )}
                     />
                 </div>
                 {checkboxes}
-                <Button
-                    type="submit"
-                    disabled={!selectedModules.length}
-                    forisFormSize
-                >
-                    {_("Generate report")}
-                </Button>
+                <div className="text-right">
+                    <Button
+                        type="submit"
+                        disabled={!selectedModules.length}
+                        forisFormSize
+                    >
+                        {_("Generate report")}
+                    </Button>
+                </div>
             </form>
         </>
     );

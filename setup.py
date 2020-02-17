@@ -32,7 +32,7 @@ class CustomBuild(build_py):
 
 setuptools.setup(
     name=NAME,
-    version='2.2.2',
+    version='2.3.0',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 

@@ -201,11 +201,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
           ID
         </th>
         <th
-          aria-label="Download"
-          scope="col"
-        />
-        <th
-          aria-label="Delete"
+          aria-label="Actions"
           scope="col"
         />
       </tr>
@@ -218,25 +214,26 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
         <td
           class="text-center"
         >
-          <a
-            class="btn btn-primary"
-            download=""
-            href="/reforis/diagnostics/api/reports/1234/contents"
+          <div
+            class="btn-group"
+            role="group"
           >
-            Download
-          </a>
-        </td>
-        <td
-          class="text-right"
-        >
-          <button
-            class="btn btn-danger"
-            type="button"
-          >
-             
-             
-            Delete
-          </button>
+            <a
+              class="btn btn-primary"
+              download=""
+              href="/reforis/diagnostics/api/reports/1234/contents"
+            >
+              Download
+            </a>
+            <button
+              class="btn btn-danger btn-sm"
+              type="button"
+            >
+               
+               
+              Delete
+            </button>
+          </div>
         </td>
       </tr>
       <tr>
@@ -248,25 +245,26 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
         <td
           class="text-center"
         >
-          <a
-            class="btn btn-primary"
-            download=""
-            href="/reforis/diagnostics/api/reports/5678/contents"
+          <div
+            class="btn-group"
+            role="group"
           >
-            Download
-          </a>
-        </td>
-        <td
-          class="text-right"
-        >
-          <button
-            class="btn btn-danger"
-            type="button"
-          >
-             
-             
-            Delete
-          </button>
+            <a
+              class="btn btn-primary"
+              download=""
+              href="/reforis/diagnostics/api/reports/5678/contents"
+            >
+              Download
+            </a>
+            <button
+              class="btn btn-danger btn-sm"
+              type="button"
+            >
+               
+               
+              Delete
+            </button>
+          </div>
         </td>
       </tr>
     </tbody>
@@ -377,11 +375,7 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
           ID
         </th>
         <th
-          aria-label="Download"
-          scope="col"
-        />
-        <th
-          aria-label="Delete"
+          aria-label="Actions"
           scope="col"
         />
       </tr>
@@ -394,25 +388,26 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
         <td
           class="text-center"
         >
-          <a
-            class="btn btn-primary"
-            download=""
-            href="/reforis/diagnostics/api/reports/1234/contents"
+          <div
+            class="btn-group"
+            role="group"
           >
-            Download
-          </a>
-        </td>
-        <td
-          class="text-right"
-        >
-          <button
-            class="btn btn-danger"
-            type="button"
-          >
-             
-             
-            Delete
-          </button>
+            <a
+              class="btn btn-primary"
+              download=""
+              href="/reforis/diagnostics/api/reports/1234/contents"
+            >
+              Download
+            </a>
+            <button
+              class="btn btn-danger btn-sm"
+              type="button"
+            >
+               
+               
+              Delete
+            </button>
+          </div>
         </td>
       </tr>
     </tbody>

@@ -26,18 +26,17 @@ export default function ReportsTable({ reports, onReload }) {
     return (
         <table className="table table-hover" data-testid="reports-table">
             <tbody>
-                <tr>
-                    <th scope="col">{_("ID")}</th>
-                    <th scope="col" aria-label={_("Download")} />
-                    <th scope="col" aria-label={_("Delete")} />
-                </tr>
-                {reports.map((report) => (
-                    <ReportRow
-                        key={report.diag_id}
-                        report={report}
-                        onReload={onReload}
-                    />
-                ))}
+            <tr>
+                <th scope="col">{_("ID")}</th>
+                <th scope="col" aria-label={_("Actions")}/>
+            </tr>
+            {reports.map((report) => (
+                <ReportRow
+                    key={report.diag_id}
+                    report={report}
+                    onReload={onReload}
+                />
+            ))}
             </tbody>
         </table>
     );
@@ -49,9 +48,6 @@ ReportRow.propTypes = {
 };
 
 function ReportRow({ report, onReload }) {
-    const isReady = useReportIsReady(report);
-    const deleteReport = useDeleteReport(report.diag_id, onReload);
-
     return (
         <tr>
             <td className="align-middle">
@@ -59,25 +55,43 @@ function ReportRow({ report, onReload }) {
             </td>
 
             <td className="text-center">
-                {isReady ? (
-                    <DownloadButton
-                        href={`${API_URLs.reports}/${report.diag_id}/contents`}
-                    >
-                        {_("Download")}
-                    </DownloadButton>
-                ) : <SpinnerElement />}
-            </td>
-
-            <td className="text-right">
-                {isReady && (
-                    <Button
-                        className="btn-danger"
-                        onClick={deleteReport}
-                    >
-                        {_("Delete")}
-                    </Button>
-                )}
+                <ForwarderActions
+                    report={report}
+                    onReload={onReload}
+                />
             </td>
         </tr>
+    );
+}
+
+ReportRow.propTypes = {
+    report: PropTypes.object.isRequired,
+    onReload: PropTypes.func.isRequired,
+};
+
+function ForwarderActions({
+    report, onReload
+}) {
+    const isReady = useReportIsReady(report);
+    const deleteReport = useDeleteReport(report.diag_id, onReload);
+
+    if (!isReady) {
+        return <SpinnerElement/>;
+    }
+
+    return (
+        <div className="btn-group" role="group">
+            <DownloadButton
+                href={`${API_URLs.reports}/${report.diag_id}/contents`}
+            >
+                {_("Download")}
+            </DownloadButton>
+            <Button
+                onClick={deleteReport}
+                className="btn-danger btn-sm"
+            >
+                {_("Delete")}
+            </Button>
+        </div>
     );
 }

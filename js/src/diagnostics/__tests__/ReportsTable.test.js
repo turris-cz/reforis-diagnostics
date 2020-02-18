@@ -30,7 +30,7 @@ describe("<ReportsTable />", () => {
     }
 
     it("should render reports", async () => {
-        const container = createTable([{diag_id: 1234, status: "ready"}]);
+        const container = createTable([{diag_id: "1234", status: "ready"}]);
         await waitForElement(() => getByTestId(container, "reports-table"));
         expect(container).toMatchSnapshot();
     });
@@ -41,7 +41,7 @@ describe("<ReportsTable />", () => {
     });
 
     it("should display spinner when report is not ready", async () => {
-        const container = createTable([{diag_id: 1234, status: "pending"}]);
+        const container = createTable([{diag_id: "1234", status: "pending"}]);
         await waitForElement(() => getByTestId(container, "reports-table"));
 
         expect(container).toMatchSnapshot();
@@ -52,12 +52,12 @@ describe("<ReportsTable />", () => {
         await waitForElement(() => getByTestId(container, "reports-table"));
 
         await act(async ()=>{
-            mockAxios.mockResponse({data: {diag_id: 1234, status: "ready"}});
+            mockAxios.mockResponse({data: {diag_id: "1234", status: "ready"}});
         });
     });
 
     it("should handle error on fetching reports", async () => {
-        const container = createTable([{diag_id: 1234, status: "pending"}]);
+        const container = createTable([{diag_id: "1234", status: "pending"}]);
         await wait(
             () => expect(mockAxios.get).toBeCalledWith( "/reforis/diagnostics/api/reports/1234", expect.anything())
         );
@@ -68,7 +68,7 @@ describe("<ReportsTable />", () => {
     });
 
     it("should delete report", async () => {
-        const container = createTable([{diag_id: 1234, status: "ready"}]);
+        const container = createTable([{diag_id: "1234", status: "ready"}]);
         const deleteButton = await waitForElement(()=> getByText(container, "Delete"));
         fireEvent.click(deleteButton);
         expect(mockAxios.delete).toHaveBeenCalledWith("/reforis/diagnostics/api/reports/1234", expect.anything());
@@ -78,7 +78,7 @@ describe("<ReportsTable />", () => {
     });
 
     it("should handle delete error", async () => {
-        const container = createTable([{diag_id: 1234, status: "ready"}]);
+        const container = createTable([{diag_id: "1234", status: "ready"}]);
         const deleteButton = await waitForElement(()=> getByText(container, "Delete"));
         fireEvent.click(deleteButton);
         // Response to DELETE report

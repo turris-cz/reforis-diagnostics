@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-03-02 16:38+0100\n"
-"PO-Revision-Date: 2019-10-02 16:28+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-03-13 18:33+0000\n"
+"Last-Translator: Florian <floflr@zaclys.net>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/turris/"
+"reforis-diagnostics-pluign/fr/>\n"
 "Language: fr\n"
-"Language-Team: fr <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.0-dev\n"
 "Generated-By: Babel 2.8.0\n"
 
 #: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:24
@@ -58,19 +60,19 @@ msgstr ""
 
 #: js/src/diagnostics/ReportsTable.js:30
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: js/src/diagnostics/ReportsTable.js:31
 msgid "Actions"
-msgstr ""
+msgstr "Actions"
 
 #: js/src/diagnostics/ReportsTable.js:89
 msgid "Download"
-msgstr ""
+msgstr "Télécharger"
 
 #: js/src/diagnostics/ReportsTable.js:95
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #: js/src/diagnostics/hooks.js:39
 msgid "Cannot fetch report data."
@@ -104,4 +106,3 @@ msgstr ""
 
 #~ msgid "Cannot fetch report data"
 #~ msgstr ""
-

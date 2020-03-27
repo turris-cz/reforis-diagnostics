@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-03-02 16:38+0100\n"
-"PO-Revision-Date: 2020-03-08 14:33+0000\n"
+"PO-Revision-Date: 2020-03-28 22:09+0000\n"
 "Last-Translator: Josef Schlehofer <pepe@bloodkings.eu>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/"
 "reforis-diagnostics-pluign/cs/>\n"
@@ -68,11 +68,11 @@ msgstr ""
 
 #: js/src/diagnostics/ReportsTable.js:89
 msgid "Download"
-msgstr ""
+msgstr "Stahování"
 
 #: js/src/diagnostics/ReportsTable.js:95
 msgid "Delete"
-msgstr ""
+msgstr "Smazat"
 
 #: js/src/diagnostics/hooks.js:39
 msgid "Cannot fetch report data."

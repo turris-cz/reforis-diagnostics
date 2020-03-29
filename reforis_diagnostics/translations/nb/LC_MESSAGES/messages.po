@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-03-02 16:38+0100\n"
-"PO-Revision-Date: 2020-03-26 19:46+0000\n"
+"PO-Revision-Date: 2020-03-30 02:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
 "reforis-diagnostics-pluign/nb_NO/>\n"
@@ -60,7 +60,7 @@ msgstr ""
 
 #: js/src/diagnostics/ReportsTable.js:30
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: js/src/diagnostics/ReportsTable.js:31
 msgid "Actions"

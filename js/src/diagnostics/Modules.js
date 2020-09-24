@@ -9,7 +9,11 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    API_STATE, useAPIGet, useForm, withErrorMessage, withSpinner,
+    API_STATE,
+    useAPIGet,
+    useForm,
+    withErrorMessage,
+    withSpinner,
 } from "foris";
 
 import API_URLs from "API";
@@ -32,22 +36,24 @@ export default function Modules({ onReload }) {
             const modules = getModulesResponse.data.modules.reduce(
                 (modulesAccumulator, module) => ({
                     ...modulesAccumulator,
-                    [module.module_id]: false,
+                    [module.module_id]: true,
                 }),
-                {},
+                {}
             );
-            setFormValue((value) => ({ $set: { modules: value } }))({ target: { value: modules } });
+            setFormValue((value) => ({ $set: { modules: value } }))({
+                target: { value: modules },
+            });
         }
     }, [getModulesResponse, setFormValue]);
-    const descriptions = getModulesResponse.data && getModulesResponse.data.modules.reduce(
-        (descriptionsAccumulator, module) => (
-            {
+    const descriptions =
+        getModulesResponse.data &&
+        getModulesResponse.data.modules.reduce(
+            (descriptionsAccumulator, module) => ({
                 ...descriptionsAccumulator,
                 [module.module_id]: module.description,
-            }
-        ),
-        {},
-    );
+            }),
+            {}
+        );
     return (
         <>
             <h3>{_("Modules")}</h3>
@@ -68,4 +74,6 @@ function bypassValidator() {
 }
 
 const withSpinnerOnModules = withSpinner((props) => !props.modules);
-const ModulesFormWithErrorAndSpinner = withErrorMessage(withSpinnerOnModules(ModulesForm));
+const ModulesFormWithErrorAndSpinner = withErrorMessage(
+    withSpinnerOnModules(ModulesForm)
+);

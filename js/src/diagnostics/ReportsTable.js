@@ -20,25 +20,33 @@ ReportsTable.propTypes = {
 
 export default function ReportsTable({ reports, onReload }) {
     if (reports.length === 0) {
-        return <p className="text-muted text-center">{_("There are no reports available.")}</p>;
+        return (
+            <p className="text-muted text-center">
+                {_("There are no reports available.")}
+            </p>
+        );
     }
 
     return (
-        <table className="table table-hover" data-testid="reports-table">
-            <tbody>
-                <tr>
-                    <th scope="col">{_("ID")}</th>
-                    <th scope="col" aria-label={_("Actions")} />
-                </tr>
-                {reports.map((report) => (
-                    <ReportRow
-                        key={report.diag_id}
-                        report={report}
-                        onReload={onReload}
-                    />
-                ))}
-            </tbody>
-        </table>
+        <div className="table-responsive">
+            <table className="table table-hover" data-testid="reports-table">
+                <thead className="thead-light">
+                    <tr>
+                        <th scope="col">{_("ID")}</th>
+                        <th scope="col" aria-label={_("Actions")} />
+                    </tr>
+                </thead>
+                <tbody>
+                    {reports.map((report) => (
+                        <ReportRow
+                            key={report.diag_id}
+                            report={report}
+                            onReload={onReload}
+                        />
+                    ))}
+                </tbody>
+            </table>
+        </div>
     );
 }
 
@@ -50,15 +58,10 @@ ReportRow.propTypes = {
 function ReportRow({ report, onReload }) {
     return (
         <tr>
-            <td className="align-middle">
-                {report.diag_id}
-            </td>
+            <td className="align-middle">{report.diag_id}</td>
 
-            <td className="text-center">
-                <ReportActions
-                    report={report}
-                    onReload={onReload}
-                />
+            <td className="text-right">
+                <ReportActions report={report} onReload={onReload} />
             </td>
         </tr>
     );
@@ -71,9 +74,7 @@ ReportActions.propTypes = {
     onReload: PropTypes.func.isRequired,
 };
 
-function ReportActions({
-    report, onReload,
-}) {
+function ReportActions({ report, onReload }) {
     const isReady = useReportIsReady(report);
     const deleteReport = useDeleteReport(report.diag_id, onReload);
 
@@ -82,16 +83,15 @@ function ReportActions({
     }
 
     return (
-        <div className="btn-group" role="group">
+        <div className="btn-group btn-group-sm" role="group">
             <DownloadButton
                 href={`${API_URLs.reports}/${report.diag_id}/contents`}
             >
+                <i className="fas fa-download fa-sm mr-1 align-baseline" />
                 {_("Download")}
             </DownloadButton>
-            <Button
-                onClick={deleteReport}
-                className="btn-danger btn-sm"
-            >
+            <Button onClick={deleteReport} className="btn-danger btn-sm">
+                <i className="fas fa-trash fa-sm mr-1 align-baseline" />
                 {_("Delete")}
             </Button>
         </div>

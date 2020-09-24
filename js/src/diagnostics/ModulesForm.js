@@ -9,7 +9,12 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    API_STATE, Button, CheckBox, formFieldsSize, useAlert, useAPIPost,
+    API_STATE,
+    Button,
+    CheckBox,
+    buttonFormFieldsSize,
+    useAlert,
+    useAPIPost,
 } from "foris";
 
 import API_URLs from "API";
@@ -22,7 +27,10 @@ ModulesForm.propTypes = {
 };
 
 export default function ModulesForm({
-    onReload, modules, descriptions, setFormValue,
+    onReload,
+    modules,
+    descriptions,
+    setFormValue,
 }) {
     const [setAlert] = useAlert();
 
@@ -35,8 +43,9 @@ export default function ModulesForm({
         }
     }, [onReload, postReportResponse, setAlert]);
 
-    const selectedModules = Object.keys(modules)
-        .filter((moduleName) => modules[moduleName]);
+    const selectedModules = Object.keys(modules).filter(
+        (moduleName) => modules[moduleName]
+    );
 
     function generateReport(event) {
         event.preventDefault();
@@ -45,38 +54,40 @@ export default function ModulesForm({
 
     const checkboxes = (
         <div className="row">
-            {Object.keys(modules)
-                .map((name) => (
-                    <div key={name} className="col-sm-12 col-md-6 col-lg-4">
-                        <CheckBox
-                            label={name}
-                            checked={modules[name]}
-                            onChange={
-                                setFormValue((value) => ({ modules: { [name]: { $set: value } } }))
-                            }
-                            helpText={descriptions[name]}
-                        />
-                    </div>
-                ))}
+            {Object.keys(modules).map((name) => (
+                <div key={name} className="col-sm-12 col-md-6 col-lg-4">
+                    <CheckBox
+                        label={name}
+                        checked={modules[name]}
+                        onChange={setFormValue((value) => ({
+                            modules: { [name]: { $set: value } },
+                        }))}
+                        helpText={descriptions[name]}
+                    />
+                </div>
+            ))}
         </div>
     );
 
     return (
         <>
-            <p>{_("Select modules which you want to include in the report.")}</p>
-            <form onSubmit={generateReport} className={formFieldsSize}>
+            <p>
+                {_("Select modules which you want to include in the report.")}
+            </p>
+            <form onSubmit={generateReport} className="container-fluid">
                 <div style={{ fontWeight: "bold" }}>
                     <CheckBox
                         label={_("Select all")}
-                        checked={Object.keys(modules)
-                            .every((name) => modules[name] === true)}
-                        onChange={setFormValue(
-                            (value) => ({ modules: updateAllValues(modules, value) }),
+                        checked={Object.keys(modules).every(
+                            (name) => modules[name] === true
                         )}
+                        onChange={setFormValue((value) => ({
+                            modules: updateAllValues(modules, value),
+                        }))}
                     />
                 </div>
                 {checkboxes}
-                <div className="text-right">
+                <div className={`${buttonFormFieldsSize} text-right`}>
                     <Button
                         type="submit"
                         disabled={!selectedModules.length}
@@ -93,9 +104,8 @@ export default function ModulesForm({
 // Return rules for immutability-helper to set every key to passed value
 function updateAllValues(objectToUpdate, value) {
     const updateRules = { ...objectToUpdate };
-    Object.keys(updateRules)
-        .forEach((moduleName) => {
-            updateRules[moduleName] = { $set: value };
-        });
+    Object.keys(updateRules).forEach((moduleName) => {
+        updateRules[moduleName] = { $set: value };
+    });
     return updateRules;
 }

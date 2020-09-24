@@ -7,9 +7,7 @@
 
 import { useEffect, useState } from "react";
 
-import {
-    API_STATE, useAlert, useAPIDelete, useAPIPolling,
-} from "foris";
+import { API_STATE, useAlert, useAPIDelete, useAPIPolling } from "foris";
 import API_URLs from "../API";
 
 const REPORT_REFRESH_INTERVAL = 700; // milliseconds
@@ -29,7 +27,7 @@ export function useReportIsReady(report) {
     const [reportState] = useAPIPolling(
         `${API_URLs.reports}/${report.diag_id}`,
         REPORT_REFRESH_INTERVAL,
-        !reportIsReady,
+        !reportIsReady
     );
 
     useEffect(() => {
@@ -46,7 +44,9 @@ export function useReportIsReady(report) {
 export function useDeleteReport(reportId, onReload) {
     const [setAlert] = useAlert();
 
-    const [deleteReportResponse, deleteReport] = useAPIDelete(`${API_URLs.reports}/${reportId}`);
+    const [deleteReportResponse, deleteReport] = useAPIDelete(
+        `${API_URLs.reports}/${reportId}`
+    );
     useEffect(() => {
         if (deleteReportResponse.state === API_STATE.SUCCESS) {
             onReload();

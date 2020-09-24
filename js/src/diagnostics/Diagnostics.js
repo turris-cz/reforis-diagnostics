@@ -22,7 +22,11 @@ export default function Diagnostics() {
     return (
         <>
             <h1>{_("Diagnostics")}</h1>
-            <p>{_("Generate a diagnostics report to simplify debugging some problems related to the router's functionality.")}</p>
+            <p>
+                {_(
+                    "Generate a diagnostics report to simplify debugging some problems related to the router's functionality."
+                )}
+            </p>
             <Modules onReload={getReports} />
             <h3 className="mt-3">{_("Reports")}</h3>
             <ReportsTableWithErrorAndSpinner
@@ -34,4 +38,6 @@ export default function Diagnostics() {
     );
 }
 
-const ReportsTableWithErrorAndSpinner = withSpinnerOnSending(withErrorMessage(ReportsTable));
+const ReportsTableWithErrorAndSpinner = withSpinnerOnSending(
+    withErrorMessage(ReportsTable)
+);

@@ -20,7 +20,11 @@ ReportsTable.propTypes = {
 
 export default function ReportsTable({ reports, onReload }) {
     if (reports.length === 0) {
-        return <p className="text-muted text-center">{_("There are no reports available.")}</p>;
+        return (
+            <p className="text-muted text-center">
+                {_("There are no reports available.")}
+            </p>
+        );
     }
 
     return (
@@ -50,15 +54,10 @@ ReportRow.propTypes = {
 function ReportRow({ report, onReload }) {
     return (
         <tr>
-            <td className="align-middle">
-                {report.diag_id}
-            </td>
+            <td className="align-middle">{report.diag_id}</td>
 
             <td className="text-center">
-                <ReportActions
-                    report={report}
-                    onReload={onReload}
-                />
+                <ReportActions report={report} onReload={onReload} />
             </td>
         </tr>
     );
@@ -71,9 +70,7 @@ ReportActions.propTypes = {
     onReload: PropTypes.func.isRequired,
 };
 
-function ReportActions({
-    report, onReload,
-}) {
+function ReportActions({ report, onReload }) {
     const isReady = useReportIsReady(report);
     const deleteReport = useDeleteReport(report.diag_id, onReload);
 
@@ -88,10 +85,7 @@ function ReportActions({
             >
                 {_("Download")}
             </DownloadButton>
-            <Button
-                onClick={deleteReport}
-                className="btn-danger btn-sm"
-            >
+            <Button onClick={deleteReport} className="btn-danger btn-sm">
                 {_("Delete")}
             </Button>
         </div>

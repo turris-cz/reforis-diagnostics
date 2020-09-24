@@ -12,7 +12,7 @@ import {
     API_STATE,
     Button,
     CheckBox,
-    formFieldsSize,
+    buttonFormFieldsSize,
     useAlert,
     useAPIPost,
 } from "foris";
@@ -74,7 +74,7 @@ export default function ModulesForm({
             <p>
                 {_("Select modules which you want to include in the report.")}
             </p>
-            <form onSubmit={generateReport} className={formFieldsSize}>
+            <form onSubmit={generateReport} className="container-fluid">
                 <div style={{ fontWeight: "bold" }}>
                     <CheckBox
                         label={_("Select all")}
@@ -87,7 +87,7 @@ export default function ModulesForm({
                     />
                 </div>
                 {checkboxes}
-                <div className="text-right">
+                <div className={`${buttonFormFieldsSize} text-right`}>
                     <Button
                         type="submit"
                         disabled={!selectedModules.length}

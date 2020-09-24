@@ -28,21 +28,25 @@ export default function ReportsTable({ reports, onReload }) {
     }
 
     return (
-        <table className="table table-hover" data-testid="reports-table">
-            <tbody>
-                <tr>
-                    <th scope="col">{_("ID")}</th>
-                    <th scope="col" aria-label={_("Actions")} />
-                </tr>
-                {reports.map((report) => (
-                    <ReportRow
-                        key={report.diag_id}
-                        report={report}
-                        onReload={onReload}
-                    />
-                ))}
-            </tbody>
-        </table>
+        <div className="table-responsive">
+            <table className="table table-hover" data-testid="reports-table">
+                <thead className="thead-light">
+                    <tr>
+                        <th scope="col">{_("ID")}</th>
+                        <th scope="col" aria-label={_("Actions")} />
+                    </tr>
+                </thead>
+                <tbody>
+                    {reports.map((report) => (
+                        <ReportRow
+                            key={report.diag_id}
+                            report={report}
+                            onReload={onReload}
+                        />
+                    ))}
+                </tbody>
+            </table>
+        </div>
     );
 }
 
@@ -56,7 +60,7 @@ function ReportRow({ report, onReload }) {
         <tr>
             <td className="align-middle">{report.diag_id}</td>
 
-            <td className="text-center">
+            <td className="text-right">
                 <ReportActions report={report} onReload={onReload} />
             </td>
         </tr>
@@ -79,13 +83,15 @@ function ReportActions({ report, onReload }) {
     }
 
     return (
-        <div className="btn-group" role="group">
+        <div className="btn-group btn-group-sm" role="group">
             <DownloadButton
                 href={`${API_URLs.reports}/${report.diag_id}/contents`}
             >
+                <i className="fas fa-download fa-sm mr-1 align-baseline" />
                 {_("Download")}
             </DownloadButton>
             <Button onClick={deleteReport} className="btn-danger btn-sm">
+                <i className="fas fa-trash fa-sm mr-1 align-baseline" />
                 {_("Delete")}
             </Button>
         </div>

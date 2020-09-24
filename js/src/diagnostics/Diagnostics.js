@@ -27,13 +27,15 @@ export default function Diagnostics() {
                     "Generate a diagnostics report to simplify debugging some problems related to the router's functionality."
                 )}
             </p>
-            <Modules onReload={getReports} />
-            <h3 className="mt-3">{_("Reports")}</h3>
-            <ReportsTableWithErrorAndSpinner
-                apiState={getReportsResponse.state}
-                reports={getReportsResponse.data}
-                onReload={getReports}
-            />
+            <div className="card p-4 mb-3">
+                <Modules onReload={getReports} />
+                <h2>{_("Reports")}</h2>
+                <ReportsTableWithErrorAndSpinner
+                    apiState={getReportsResponse.state}
+                    reports={getReportsResponse.data}
+                    onReload={getReports}
+                />
+            </div>
         </>
     );
 }

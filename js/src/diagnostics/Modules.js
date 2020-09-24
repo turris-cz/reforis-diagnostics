@@ -56,7 +56,7 @@ export default function Modules({ onReload }) {
         );
     return (
         <>
-            <h3>{_("Modules")}</h3>
+            <h2>{_("Modules")}</h2>
             <ModulesFormWithErrorAndSpinner
                 apiState={getModulesResponse.state}
                 onReload={onReload}

@@ -8,93 +8,97 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-03-02 16:38+0100\n"
-"PO-Revision-Date: 2019-10-02 16:28+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-03-17 12:36+0000\n"
+"Last-Translator: XoD DarK <xod@xoddark.com>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/turris/"
+"reforis-diagnostics-pluign/fr/>\n"
 "Language: fr\n"
-"Language-Team: fr <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.0-dev\n"
 "Generated-By: Babel 2.8.0\n"
 
 #: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:24
 msgid "Diagnostics"
-msgstr ""
+msgstr "Diagnostiques"
 
 #: js/src/diagnostics/Diagnostics.js:25
 msgid ""
 "Generate a diagnostics report to simplify debugging some problems related"
 " to the router's functionality."
 msgstr ""
+"Génère un rapport de diagnostiques pour simplifier au débogage de certains "
+"problèmes liés aux fonctionnalités du routeur."
 
 #: js/src/diagnostics/Diagnostics.js:27
 msgid "Reports"
-msgstr ""
+msgstr "Rapports"
 
 #: js/src/diagnostics/Modules.js:53
 msgid "Modules"
-msgstr ""
+msgstr "Modules"
 
 #: js/src/diagnostics/ModulesForm.js:34
 msgid "Cannot generate report"
-msgstr ""
+msgstr "Impossible de générer un rapport"
 
 #: js/src/diagnostics/ModulesForm.js:66
 msgid "Select modules which you want to include in the report."
-msgstr ""
+msgstr "Sélectionner les modules que vous souhaitez inclure dans le rapport."
 
 #: js/src/diagnostics/ModulesForm.js:70
 msgid "Select all"
-msgstr ""
+msgstr "Tout sélectionner"
 
 #: js/src/diagnostics/ModulesForm.js:85
 msgid "Generate report"
-msgstr ""
+msgstr "Générer un rapport"
 
 #: js/src/diagnostics/ReportsTable.js:23
 msgid "There are no reports available."
-msgstr ""
+msgstr "Aucun rapport n'est disponible."
 
 #: js/src/diagnostics/ReportsTable.js:30
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: js/src/diagnostics/ReportsTable.js:31
 msgid "Actions"
-msgstr ""
+msgstr "Actions"
 
 #: js/src/diagnostics/ReportsTable.js:89
 msgid "Download"
-msgstr ""
+msgstr "Télécharger"
 
 #: js/src/diagnostics/ReportsTable.js:95
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #: js/src/diagnostics/hooks.js:39
 msgid "Cannot fetch report data."
-msgstr ""
+msgstr "Impossible de récupérer les données du rapport."
 
 #: js/src/diagnostics/hooks.js:54
 msgid "Cannot delete report."
-msgstr ""
+msgstr "Impossible de supprimer le rapport."
 
 #: reforis_diagnostics/__init__.py:45
 msgid "Cannot create diagnostics report"
-msgstr ""
+msgstr "Impossible de créer un rapport de diagnostic"
 
 #: reforis_diagnostics/__init__.py:58
 msgid "Requested report is not ready yet"
-msgstr ""
+msgstr "Le rapport demandé n'est pas encore disponible"
 
 #: reforis_diagnostics/__init__.py:66
 msgid "Requested report does not exist"
-msgstr ""
+msgstr "Le rapport demandé n'existe pas"
 
 #: reforis_diagnostics/__init__.py:89
 msgid "Cannot delete report"
-msgstr ""
+msgstr "Impossible de supprimer le rapport"
 
 #~ msgid "An error occurred during loading reports"
 #~ msgstr ""
@@ -104,4 +108,3 @@ msgstr ""
 
 #~ msgid "Cannot fetch report data"
 #~ msgstr ""
-

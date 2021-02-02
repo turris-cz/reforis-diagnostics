@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-02 16:38+0100\n"
+"POT-Creation-Date: 2021-02-02 18:30+0100\n"
 "PO-Revision-Date: 2019-10-02 16:28+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: da\n"
@@ -22,49 +22,49 @@ msgstr ""
 msgid "Diagnostics"
 msgstr ""
 
-#: js/src/diagnostics/Diagnostics.js:25
+#: js/src/diagnostics/Diagnostics.js:26
 msgid ""
 "Generate a diagnostics report to simplify debugging some problems related"
 " to the router's functionality."
 msgstr ""
 
-#: js/src/diagnostics/Diagnostics.js:27
+#: js/src/diagnostics/Diagnostics.js:32
 msgid "Reports"
 msgstr ""
 
-#: js/src/diagnostics/Modules.js:53
+#: js/src/diagnostics/Modules.js:59
 msgid "Modules"
 msgstr ""
 
-#: js/src/diagnostics/ModulesForm.js:34
+#: js/src/diagnostics/ModulesForm.js:42
 msgid "Cannot generate report"
 msgstr ""
 
-#: js/src/diagnostics/ModulesForm.js:66
+#: js/src/diagnostics/ModulesForm.js:75
 msgid "Select modules which you want to include in the report."
 msgstr ""
 
-#: js/src/diagnostics/ModulesForm.js:70
+#: js/src/diagnostics/ModulesForm.js:80
 msgid "Select all"
 msgstr ""
 
-#: js/src/diagnostics/ModulesForm.js:85
+#: js/src/diagnostics/ModulesForm.js:96
 msgid "Generate report"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:23
+#: js/src/diagnostics/ReportsTable.js:25
 msgid "There are no reports available."
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:30
+#: js/src/diagnostics/ReportsTable.js:35
 msgid "ID"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:31
+#: js/src/diagnostics/ReportsTable.js:36
 msgid "Actions"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:89
+#: js/src/diagnostics/ReportsTable.js:91
 msgid "Download"
 msgstr ""
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: js/src/diagnostics/hooks.js:39
+#: js/src/diagnostics/hooks.js:37
 msgid "Cannot fetch report data."
 msgstr ""
 

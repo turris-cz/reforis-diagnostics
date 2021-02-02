@@ -7,68 +7,67 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-02 16:38+0100\n"
+"POT-Creation-Date: 2021-02-02 18:30+0100\n"
 "PO-Revision-Date: 2020-03-17 12:36+0000\n"
 "Last-Translator: XoD DarK <xod@xoddark.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/turris/"
-"reforis-diagnostics-pluign/fr/>\n"
 "Language: fr\n"
+"Language-Team: French <https://hosted.weblate.org/projects/turris"
+"/reforis-diagnostics-pluign/fr/>\n"
+"Plural-Forms: nplurals=2; plural=n > 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.0-dev\n"
 "Generated-By: Babel 2.8.0\n"
 
 #: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:24
 msgid "Diagnostics"
 msgstr "Diagnostiques"
 
-#: js/src/diagnostics/Diagnostics.js:25
+#: js/src/diagnostics/Diagnostics.js:26
 msgid ""
 "Generate a diagnostics report to simplify debugging some problems related"
 " to the router's functionality."
 msgstr ""
-"Génère un rapport de diagnostiques pour simplifier au débogage de certains "
-"problèmes liés aux fonctionnalités du routeur."
+"Génère un rapport de diagnostiques pour simplifier au débogage de "
+"certains problèmes liés aux fonctionnalités du routeur."
 
-#: js/src/diagnostics/Diagnostics.js:27
+#: js/src/diagnostics/Diagnostics.js:32
 msgid "Reports"
 msgstr "Rapports"
 
-#: js/src/diagnostics/Modules.js:53
+#: js/src/diagnostics/Modules.js:59
 msgid "Modules"
 msgstr "Modules"
 
-#: js/src/diagnostics/ModulesForm.js:34
+#: js/src/diagnostics/ModulesForm.js:42
 msgid "Cannot generate report"
 msgstr "Impossible de générer un rapport"
 
-#: js/src/diagnostics/ModulesForm.js:66
+#: js/src/diagnostics/ModulesForm.js:75
 msgid "Select modules which you want to include in the report."
 msgstr "Sélectionner les modules que vous souhaitez inclure dans le rapport."
 
-#: js/src/diagnostics/ModulesForm.js:70
+#: js/src/diagnostics/ModulesForm.js:80
 msgid "Select all"
 msgstr "Tout sélectionner"
 
-#: js/src/diagnostics/ModulesForm.js:85
+#: js/src/diagnostics/ModulesForm.js:96
 msgid "Generate report"
 msgstr "Générer un rapport"
 
-#: js/src/diagnostics/ReportsTable.js:23
+#: js/src/diagnostics/ReportsTable.js:25
 msgid "There are no reports available."
 msgstr "Aucun rapport n'est disponible."
 
-#: js/src/diagnostics/ReportsTable.js:30
+#: js/src/diagnostics/ReportsTable.js:35
 msgid "ID"
 msgstr "ID"
 
-#: js/src/diagnostics/ReportsTable.js:31
+#: js/src/diagnostics/ReportsTable.js:36
 msgid "Actions"
 msgstr "Actions"
 
-#: js/src/diagnostics/ReportsTable.js:89
+#: js/src/diagnostics/ReportsTable.js:91
 msgid "Download"
 msgstr "Télécharger"
 
@@ -76,7 +75,7 @@ msgstr "Télécharger"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: js/src/diagnostics/hooks.js:39
+#: js/src/diagnostics/hooks.js:37
 msgid "Cannot fetch report data."
 msgstr "Impossible de récupérer les données du rapport."
 
@@ -108,3 +107,4 @@ msgstr "Impossible de supprimer le rapport"
 
 #~ msgid "Cannot fetch report data"
 #~ msgstr ""
+

@@ -3,7 +3,7 @@
     "author": "CZ.NIC, z.s.p.o.",
     "repository": {
         "type": "git",
-        "url": "https://gitlab.labs.nic.cz/turris/reforis/reforis-diagnostics.git"
+        "url": "https://gitlab.nic.cz/turris/reforis/reforis-diagnostics.git"
     },
     "license": "GPL-3.0",
     "version": "2.5.0",

@@ -6,7 +6,7 @@
         "url": "https://gitlab.nic.cz/turris/reforis/reforis-diagnostics.git"
     },
     "license": "GPL-3.0",
-    "version": "2.5.0",
+    "version": "2.5.1",
     "description": "Diagnostics plugins for Foris.",
     "main": "./src/app.js",
     "dependencies": {

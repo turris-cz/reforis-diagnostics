@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-02-02 18:30+0100\n"
-"PO-Revision-Date: 2021-06-15 22:23+0000\n"
+"PO-Revision-Date: 2021-06-16 11:42+0000\n"
 "Last-Translator: Atec <nil.maho@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/turris/"
 "reforis-diagnostics-plugin/sk/>\n"
@@ -22,29 +22,31 @@ msgstr ""
 
 #: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:24
 msgid "Diagnostics"
-msgstr ""
+msgstr "Diagnostiky"
 
 #: js/src/diagnostics/Diagnostics.js:26
 msgid ""
 "Generate a diagnostics report to simplify debugging some problems related"
 " to the router's functionality."
 msgstr ""
+"Vygenerovať diagnostický report, ktorá zjednoduší odlaďovanie niektorých "
+"problémov s funkcionalitou routera."
 
 #: js/src/diagnostics/Diagnostics.js:32
 msgid "Reports"
-msgstr ""
+msgstr "Správy"
 
 #: js/src/diagnostics/Modules.js:59
 msgid "Modules"
-msgstr ""
+msgstr "Moduly"
 
 #: js/src/diagnostics/ModulesForm.js:42
 msgid "Cannot generate report"
-msgstr ""
+msgstr "Report sa nedá vytvoriť"
 
 #: js/src/diagnostics/ModulesForm.js:75
 msgid "Select modules which you want to include in the report."
-msgstr ""
+msgstr "Vyberte moduly, ktoré sa majú zahrnúť do reportu."
 
 #: js/src/diagnostics/ModulesForm.js:80
 msgid "Select all"
@@ -52,11 +54,11 @@ msgstr "Vybrať všetko"
 
 #: js/src/diagnostics/ModulesForm.js:96
 msgid "Generate report"
-msgstr ""
+msgstr "Vygenerovať report"
 
 #: js/src/diagnostics/ReportsTable.js:25
 msgid "There are no reports available."
-msgstr ""
+msgstr "Nie sú dostupné žiadne reporty."
 
 #: js/src/diagnostics/ReportsTable.js:35
 msgid "ID"
@@ -76,27 +78,27 @@ msgstr "Vymazať"
 
 #: js/src/diagnostics/hooks.js:37
 msgid "Cannot fetch report data."
-msgstr ""
+msgstr "Nedajú sa získať dáta do reportu."
 
 #: js/src/diagnostics/hooks.js:54
 msgid "Cannot delete report."
-msgstr ""
+msgstr "Report sa nedá vymazať."
 
 #: reforis_diagnostics/__init__.py:45
 msgid "Cannot create diagnostics report"
-msgstr ""
+msgstr "Diagnostický report sa nedá vytvoriť"
 
 #: reforis_diagnostics/__init__.py:58
 msgid "Requested report is not ready yet"
-msgstr ""
+msgstr "Požadovaný report ešte nie je pripravený"
 
 #: reforis_diagnostics/__init__.py:66
 msgid "Requested report does not exist"
-msgstr ""
+msgstr "Požadovaný report neexistuje"
 
 #: reforis_diagnostics/__init__.py:89
 msgid "Cannot delete report"
-msgstr ""
+msgstr "Report sa nedá vymazať"
 
 #~ msgid "An error occurred during loading reports"
 #~ msgstr ""

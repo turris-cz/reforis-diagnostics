@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-02-02 18:30+0100\n"
-"PO-Revision-Date: 2021-09-21 18:35+0000\n"
+"PO-Revision-Date: 2021-09-23 06:34+0000\n"
 "Last-Translator: Atec <dr.atec@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/turris/"
 "reforis-diagnostics-plugin/sk/>\n"
@@ -29,7 +29,7 @@ msgid ""
 "Generate a diagnostics report to simplify debugging some problems related"
 " to the router's functionality."
 msgstr ""
-"Vygenerovať diagnostický report, ktorý zjednoduší odstraňovanie určitých "
+"Vygenerovať diagnostický report, ktory zjednoduší odstraňovanie určitých "
 "problémov v činnosti routera."
 
 #: js/src/diagnostics/Diagnostics.js:32
@@ -46,7 +46,7 @@ msgstr "Report sa nedá vytvoriť"
 
 #: js/src/diagnostics/ModulesForm.js:75
 msgid "Select modules which you want to include in the report."
-msgstr "Vyberte moduly, ktoré sa zahrnú do reportu."
+msgstr "Vyberte moduly, ktoré sa majú zahrnúť do reportu."
 
 #: js/src/diagnostics/ModulesForm.js:80
 msgid "Select all"
@@ -70,7 +70,7 @@ msgstr "Akcie"
 
 #: js/src/diagnostics/ReportsTable.js:91
 msgid "Download"
-msgstr "Sťahovanie"
+msgstr "Stiahnuť"
 
 #: js/src/diagnostics/ReportsTable.js:95
 msgid "Delete"
@@ -78,7 +78,7 @@ msgstr "Vymazať"
 
 #: js/src/diagnostics/hooks.js:37
 msgid "Cannot fetch report data."
-msgstr "Nedajú sa získať dáta reportu."
+msgstr "Nedajú sa získať dáta do reportu."
 
 #: js/src/diagnostics/hooks.js:54
 msgid "Cannot delete report."

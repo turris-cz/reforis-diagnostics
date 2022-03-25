@@ -41,12 +41,10 @@ setuptools.setup(
     author='CZ.NIC, z. s. p. o.',
     author_email='bogdan.bodnar@nic.cz',
 
-    # All versions are fixed just for case. Once in while try to check for new versions.
     install_requires=[
         'flask',
         'Babel',
         'Flask-Babel',
-        'reforis @ git+https://gitlab.nic.cz/turris/reforis/reforis#egg=reforis',
     ],
     extras_require={
         'devel': [
@@ -54,6 +52,7 @@ setuptools.setup(
             'pylint',
             'pylint-quotes',
             'pycodestyle',
+            'reforis @ git+https://gitlab.nic.cz/turris/reforis/reforis#egg=reforis',
         ],
     },
     setup_requires=[

@@ -8,19 +8,21 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-02-02 18:30+0100\n"
-"PO-Revision-Date: 2019-10-02 16:28+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-12-31 23:50+0000\n"
+"Last-Translator: Anselmo <anselmo@casinadicornia.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/turris/"
+"reforis-diagnostics-plugin/it/>\n"
 "Language: it\n"
-"Language-Team: it <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 "Generated-By: Babel 2.8.0\n"
 
 #: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:24
 msgid "Diagnostics"
-msgstr ""
+msgstr "Diagnostica"
 
 #: js/src/diagnostics/Diagnostics.js:26
 msgid ""
@@ -104,4 +106,3 @@ msgstr ""
 
 #~ msgid "Cannot fetch report data"
 #~ msgstr ""
-

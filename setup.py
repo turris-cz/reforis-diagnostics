@@ -1,4 +1,4 @@
-#  Copyright (C) 2019-2022 CZ.NIC z.s.p.o. (https://www.nic.cz/)
+#  Copyright (C) 2019-2023 CZ.NIC z.s.p.o. (https://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -49,7 +49,8 @@ setuptools.setup(
     extras_require={
         'devel': [
             'pytest',
-            'pylint',
+            # TODO: remove when https://github.com/edaniszewski/pylint-quotes/issues/29 is fixed
+            'pylint < 3.0.0',
             'pylint-quotes',
             'pycodestyle',
             'reforis @ git+https://gitlab.nic.cz/turris/reforis/reforis#egg=reforis',

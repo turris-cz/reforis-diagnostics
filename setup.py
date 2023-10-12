@@ -38,8 +38,8 @@ setuptools.setup(
 
     description='reForis Diagnostics plugin is a tool for collecting and downloading logs from Turris routers.',
     url='https://gitlab.nic.cz/turris/reforis/reforis-diagnostics',
-    author='CZ.NIC, z. s. p. o.',
-    author_email='bogdan.bodnar@nic.cz',
+    author='CZ.NIC, z.s.p.o. (https://www.nic.cz/)',
+    author_email='software@turris.com',
 
     install_requires=[
         'flask',

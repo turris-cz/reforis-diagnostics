@@ -1,7 +1,9 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2023 CZ.NIC z.s.p.o. (https://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
+
+""" Diagnostics module for Foris Controller API """
 
 import gzip
 import io
@@ -16,10 +18,10 @@ from reforis.foris_controller_api.utils import APIError, validate_json
 
 BASE_DIR = Path(__file__).parent
 
-# pylint: disable=invalid-name
+
 blueprint = Blueprint('Diagnostics', __name__, url_prefix='/diagnostics/api')
 
-# pylint: disable=invalid-name
+
 diagnostics = {
     'blueprint': blueprint,
     'js_app_path': 'reforis_diagnostics/js/app.min.js',
@@ -29,16 +31,26 @@ diagnostics = {
 
 @blueprint.route('/modules', methods=['GET'])
 def get_modules():
+    """
+    Returns a JSON response containing a list of diagnostic modules.
+    """
     return jsonify(current_app.backend.perform('diagnostics', 'list_modules'))
 
 
 @blueprint.route('/reports', methods=['GET'])
 def get_reports():
+    """
+    Returns a JSON response containing a list of diagnostic reports.
+    """
     return jsonify(current_app.backend.perform('diagnostics', 'list_diagnostics')['diagnostics'])
 
 
 @blueprint.route('/reports', methods=['POST'])
 def post_report():
+    """
+    Accepts a JSON request containing a list of diagnostic modules
+    and returns a JSON response containing a diagnostic report.
+    """
     validate_json(request.json, {'modules': list})
     response = current_app.backend.perform('diagnostics', 'prepare_diagnostic', request.json)
     if not response.get('diag_id'):
@@ -48,11 +60,17 @@ def post_report():
 
 @blueprint.route('/reports/<report_id>', methods=['GET'])
 def get_report_meta(report_id):
+    """
+    Returns a JSON response containing metadata of a diagnostic report.
+    """
     return jsonify(_get_report_details(report_id))
 
 
 @blueprint.route('/reports/<report_id>/contents', methods=['GET'])
 def get_report_contents(report_id):
+    """
+    Returns a gzipped text file containing the contents of a diagnostic report.
+    """
     report = _get_report_details(report_id)
     if report['status'] != 'ready':
         raise APIError(_('Requested report is not ready yet'), HTTPStatus.CONFLICT)
@@ -75,11 +93,14 @@ def _send_diagnostics_file(filepath, filename):
         file_out.flush()
         file_out.close()
         buffer.seek(0)
-        return send_file(buffer, as_attachment=True, attachment_filename=filename)
+        return send_file(buffer, as_attachment=True, download_name=filename)
 
 
 @blueprint.route('/reports/<report_id>', methods=['DELETE'])
 def delete_report(report_id):
+    """
+    Deletes a diagnostic report.
+    """
     response = current_app.backend.perform(
         'diagnostics',
         'remove_diagnostic',

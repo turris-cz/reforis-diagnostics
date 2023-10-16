@@ -68,6 +68,8 @@ $(VENV_NAME)/bin/activate: setup.py
 
 .PHONY: install
 install:
+	opkg update
+	opkg install foris-controller-diagnostics-module
 	$(PYTHON) -m pip install -e .
 	ln -sf /tmp/reforis-diagnostics/reforis_static/reforis_diagnostics /tmp/reforis/reforis_static/
 	/etc/init.d/lighttpd restart

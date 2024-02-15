@@ -9,6 +9,9 @@
     "version": "2.5.1",
     "description": "Diagnostics plugins for Foris.",
     "main": "./src/app.js",
+    "eslintConfig": {
+        "extends": "eslint-config-reforis"
+    },
     "dependencies": {
         "foris": "^5.1.9"
     },

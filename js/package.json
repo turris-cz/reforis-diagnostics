@@ -7,7 +7,7 @@
     },
     "license": "GPL-3.0",
     "version": "2.5.1",
-    "description": "Diagnostics plugins for Foris.",
+    "description": "reForis Diagnostics Plugin is a tool for collecting and downloading logs from Turris routers.",
     "main": "./src/app.js",
     "eslintConfig": {
         "extends": "eslint-config-reforis"

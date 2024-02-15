@@ -81,10 +81,13 @@ exports[`<Diagnostics /> should handle error on loading reports 1`] = `
         class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+          class="btn btn-primary col-sm-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
+          data-testid="generate-report-button"
           type="submit"
         >
-          Generate report
+          <span>
+            Generate report
+          </span>
         </button>
       </div>
     </form>
@@ -181,10 +184,13 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
         class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+          class="btn btn-primary col-sm-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
+          data-testid="generate-report-button"
           type="submit"
         >
-          Generate report
+          <span>
+            Generate report
+          </span>
         </button>
       </div>
     </form>
@@ -238,13 +244,15 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
                   Download
                 </a>
                 <button
-                  class="btn btn-danger btn-sm"
+                  class="btn btn-danger btn-sm d-inline-flex justify-content-center align-items-center"
                   type="button"
                 >
-                  <i
-                    class="fas fa-trash fa-sm mr-1 align-baseline"
-                  />
-                  Delete
+                  <span>
+                    <i
+                      class="fas fa-trash fa-sm mr-1 align-baseline"
+                    />
+                    Delete
+                  </span>
                 </button>
               </div>
             </td>
@@ -273,13 +281,15 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
                   Download
                 </a>
                 <button
-                  class="btn btn-danger btn-sm"
+                  class="btn btn-danger btn-sm d-inline-flex justify-content-center align-items-center"
                   type="button"
                 >
-                  <i
-                    class="fas fa-trash fa-sm mr-1 align-baseline"
-                  />
-                  Delete
+                  <span>
+                    <i
+                      class="fas fa-trash fa-sm mr-1 align-baseline"
+                    />
+                    Delete
+                  </span>
                 </button>
               </div>
             </td>
@@ -372,10 +382,13 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
         class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+          class="btn btn-primary col-sm-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
+          data-testid="generate-report-button"
           type="submit"
         >
-          Generate report
+          <span>
+            Generate report
+          </span>
         </button>
       </div>
     </form>
@@ -429,13 +442,15 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
                   Download
                 </a>
                 <button
-                  class="btn btn-danger btn-sm"
+                  class="btn btn-danger btn-sm d-inline-flex justify-content-center align-items-center"
                   type="button"
                 >
-                  <i
-                    class="fas fa-trash fa-sm mr-1 align-baseline"
-                  />
-                  Delete
+                  <span>
+                    <i
+                      class="fas fa-trash fa-sm mr-1 align-baseline"
+                    />
+                    Delete
+                  </span>
                 </button>
               </div>
             </td>

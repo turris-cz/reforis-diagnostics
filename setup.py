@@ -49,8 +49,7 @@ setuptools.setup(
     extras_require={
         'devel': [
             'pytest',
-            'pylint < 3.0.0', # TODO: remove pin when https://github.com/edaniszewski/pylint-quotes/issues/29 is fixed
-            'pylint-quotes',
+            'pylint',
             'pycodestyle',
             'reforis @ git+https://gitlab.nic.cz/turris/reforis/reforis#egg=reforis',
             'werkzeug == 2.0.3',  # TODO remove pin when werkzeug is fixed see https://gitlab.nic.cz/turris/reforis/reforis/-/merge_requests/316#note_249166

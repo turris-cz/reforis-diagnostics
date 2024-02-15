@@ -1,6 +1,5 @@
 [MASTER]
 ignore=tests,tests.py,fixtures.py
-load-plugins=pylint_quotes
 
 [MESSAGES CONTROL]
 disable=redefined-outer-name,too-few-public-methods,cyclic-import,no-member

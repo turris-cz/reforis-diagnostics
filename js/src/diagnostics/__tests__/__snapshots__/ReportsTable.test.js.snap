@@ -35,7 +35,7 @@ exports[`<ReportsTable /> should display spinner when report is not ready 1`] = 
             class="text-right"
           >
             <div
-              class="spinner-border"
+              class="spinner-border  text-primary"
               role="status"
             >
               <span
@@ -109,13 +109,15 @@ exports[`<ReportsTable /> should render reports 1`] = `
                 Download
               </a>
               <button
-                class="btn btn-danger btn-sm"
+                class="btn btn-danger btn-sm d-inline-flex justify-content-center align-items-center"
                 type="button"
               >
-                <i
-                  class="fas fa-trash fa-sm mr-1 align-baseline"
-                />
-                Delete
+                <span>
+                  <i
+                    class="fas fa-trash fa-sm mr-1 align-baseline"
+                  />
+                  Delete
+                </span>
               </button>
             </div>
           </td>

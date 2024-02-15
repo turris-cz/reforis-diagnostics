@@ -6,7 +6,6 @@
  */
 
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
 
 import {
     API_STATE,
@@ -16,6 +15,7 @@ import {
     useAlert,
     useAPIPost,
 } from "foris";
+import PropTypes from "prop-types";
 
 import API_URLs from "API";
 
@@ -89,6 +89,7 @@ export default function ModulesForm({
                 {checkboxes}
                 <div className={`${buttonFormFieldsSize} text-right`}>
                     <Button
+                        data-testid="generate-report-button"
                         type="submit"
                         disabled={!selectedModules.length}
                         forisFormSize

@@ -12,6 +12,13 @@ test:
   script:
     - make test
 
+test-js-build:
+  stage: test
+  script:
+    - cd js
+    - npm install
+    - npm run-script build -- -o /tmp/app.min.js
+
 lint:
   stage: test
   script:

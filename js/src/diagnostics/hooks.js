@@ -8,6 +8,7 @@
 import { useEffect, useState } from "react";
 
 import { API_STATE, useAlert, useAPIDelete, useAPIPolling } from "foris";
+
 import API_URLs from "../API";
 
 const REPORT_REFRESH_INTERVAL = 700; // milliseconds

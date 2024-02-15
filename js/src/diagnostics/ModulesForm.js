@@ -89,6 +89,7 @@ export default function ModulesForm({
                 {checkboxes}
                 <div className={`${buttonFormFieldsSize} text-right`}>
                     <Button
+                        data-testid="generate-report-button"
                         type="submit"
                         disabled={!selectedModules.length}
                         forisFormSize

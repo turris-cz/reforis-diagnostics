@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2024 CZ.NIC z.s.p.o. (https://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -9,7 +9,7 @@ import React from "react";
 import {
     fireEvent,
     getByText,
-    getByLabelText,
+    getByTestId,
     render,
     wait,
     waitForElement,
@@ -64,9 +64,9 @@ describe("<Modules />", () => {
         await waitForElement(() => getByText(componentContainer, "Modules"));
 
         // Default state - all selected and button enabled
-        expect(getByText(componentContainer, "Generate report").disabled).toBe(
-            false
-        );
+        expect(
+            getByTestId(componentContainer, "generate-report-button").disabled
+        ).toBe(false);
         modules.forEach((module) => {
             expect(
                 getByText(componentContainer, module.module_id).previousSibling
@@ -76,9 +76,9 @@ describe("<Modules />", () => {
 
         // All unselected, button disabled
         fireEvent.click(getByText(componentContainer, "Select all"));
-        expect(getByText(componentContainer, "Generate report").disabled).toBe(
-            true
-        );
+        expect(
+            getByTestId(componentContainer, "generate-report-button").disabled
+        ).toBe(true);
         modules.forEach((module) => {
             expect(
                 getByText(componentContainer, module.module_id).previousSibling
@@ -91,7 +91,9 @@ describe("<Modules />", () => {
         mockAxios.mockResponse({ data: { modules: modules } });
         await waitForElement(() => getByText(componentContainer, "Modules"));
 
-        fireEvent.click(getByText(componentContainer, "Generate report"));
+        fireEvent.click(
+            getByTestId(componentContainer, "generate-report-button")
+        );
         expect(mockAxios.post).toBeCalledWith(
             "/reforis/diagnostics/api/reports",
             {
@@ -115,7 +117,9 @@ describe("<Modules />", () => {
         mockAxios.mockResponse({ data: { modules: modules } });
         await waitForElement(() => getByText(componentContainer, "Modules"));
 
-        fireEvent.click(getByText(componentContainer, "Generate report"));
+        fireEvent.click(
+            getByTestId(componentContainer, "generate-report-button")
+        );
         expect(mockAxios.post).toBeCalledWith(
             "/reforis/diagnostics/api/reports",
             {

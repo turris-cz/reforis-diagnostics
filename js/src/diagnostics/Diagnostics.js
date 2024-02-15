@@ -10,6 +10,7 @@ import React, { useEffect } from "react";
 import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
 
 import API_URLs from "API";
+
 import Modules from "./Modules";
 import ReportsTable from "./ReportsTable";
 

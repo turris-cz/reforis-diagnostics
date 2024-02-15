@@ -80,7 +80,7 @@ function ReportActions({ report, onReload }) {
     const deleteReport = useDeleteReport(report.diag_id, onReload);
 
     if (!isReady) {
-        return <SpinnerElement />;
+        return <SpinnerElement className="text-primary" />;
     }
 
     return (

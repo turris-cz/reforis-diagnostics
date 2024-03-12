@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "reforis-diagnostics"
+version = "3.0.0"
+description = "reForis Diagnostics plugin is a tool for collecting and downloading logs from Turris routers."
+readme = "README.md"
+license = "GPL-3.0-or-later"
+authors = [
+    { name = "CZ.NIC, z.s.p.o. (https://www.nic.cz/)", email = "software@turris.com" },
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Flask",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+]
+dependencies = [
+    "Babel",
+    "flask",
+    "Flask-Babel",
+    "reforis",
+]
+
+[project.optional-dependencies]
+devel = [
+    "pytest",
+    "ruff",
+    "werkzeug",
+]
+
+[project.entry-points."foris.plugins"]
+reforis_diagnostics = "reforis_diagnostics:diagnostics"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/js",
+    "/reforis_diagnostics",
+    "/reforis_static",
+]
+
+[tool.hatch.build.targets.wheel.hooks.reforis]
+dependencies = ["hatch-reforis"]
+reforis_module = "reforis_diagnostics"
+
+[tool.hatch.build.targets.wheel]
+include = [
+    "/reforis_diagnostics",
+    "/reforis_static",
+]
+exclude = [
+    "**/*.po",
+    "**/*.pot",
+]
+
+[tool.ruff]
+line-length = 120

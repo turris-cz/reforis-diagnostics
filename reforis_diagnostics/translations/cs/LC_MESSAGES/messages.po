@@ -1,30 +1,30 @@
-# Czech translations for PROJECT.
-# Copyright (C) 2019 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# Czech translations for reForis Diagnostics.
+# Copyright (C) 2024 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
+# This file is distributed under the same license as the reForis Diagnostics
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-02 18:30+0100\n"
+"POT-Creation-Date: 2024-03-12 10:32+0100\n"
 "PO-Revision-Date: 2021-12-28 08:50+0000\n"
 "Last-Translator: Josef Schlehofer <pepe@bloodkings.eu>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/turris/"
-"reforis-diagnostics-plugin/cs/>\n"
 "Language: cs\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis-"
+"diagnostics-plugin/cs/>\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.10.1\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.14.0\n"
 
-#: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:24
+#: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:25
 msgid "Diagnostics"
 msgstr "Diagnostiky"
 
-#: js/src/diagnostics/Diagnostics.js:26
+#: js/src/diagnostics/Diagnostics.js:27
 msgid ""
 "Generate a diagnostics report to simplify debugging some problems related"
 " to the router's functionality."
@@ -32,11 +32,11 @@ msgstr ""
 "Vygenerovat diagnostický report, který zjednoduší ladění některých "
 "problémů souvisejících s funkcionalitou směrovače."
 
-#: js/src/diagnostics/Diagnostics.js:32
+#: js/src/diagnostics/Diagnostics.js:33
 msgid "Reports"
 msgstr "Reporty"
 
-#: js/src/diagnostics/Modules.js:59
+#: js/src/diagnostics/Modules.js:60
 msgid "Modules"
 msgstr "Moduly"
 
@@ -52,51 +52,51 @@ msgstr "Vybrat moduly, které chcete zahrnout do reportu."
 msgid "Select all"
 msgstr "Vybrat vše"
 
-#: js/src/diagnostics/ModulesForm.js:96
+#: js/src/diagnostics/ModulesForm.js:97
 msgid "Generate report"
 msgstr "Vygenerovat report"
 
-#: js/src/diagnostics/ReportsTable.js:25
+#: js/src/diagnostics/ReportsTable.js:26
 msgid "There are no reports available."
 msgstr "Žádné reporty nejsou k dispozici."
 
-#: js/src/diagnostics/ReportsTable.js:35
+#: js/src/diagnostics/ReportsTable.js:36
 msgid "ID"
 msgstr "ID"
 
-#: js/src/diagnostics/ReportsTable.js:36
+#: js/src/diagnostics/ReportsTable.js:37
 msgid "Actions"
 msgstr "Akce"
 
-#: js/src/diagnostics/ReportsTable.js:91
+#: js/src/diagnostics/ReportsTable.js:92
 msgid "Download"
 msgstr "Stáhnout"
 
-#: js/src/diagnostics/ReportsTable.js:95
+#: js/src/diagnostics/ReportsTable.js:96
 msgid "Delete"
 msgstr "Smazat"
 
-#: js/src/diagnostics/hooks.js:37
+#: js/src/diagnostics/hooks.js:38
 msgid "Cannot fetch report data."
 msgstr "Nelze získat data reportu."
 
-#: js/src/diagnostics/hooks.js:54
+#: js/src/diagnostics/hooks.js:55
 msgid "Cannot delete report."
 msgstr "Nelze smazat report."
 
-#: reforis_diagnostics/__init__.py:45
+#: reforis_diagnostics/__init__.py:57
 msgid "Cannot create diagnostics report"
 msgstr "Nelze vytvořit diagnostický report"
 
-#: reforis_diagnostics/__init__.py:58
+#: reforis_diagnostics/__init__.py:76
 msgid "Requested report is not ready yet"
 msgstr "Vyžádaný report ještě není připraven"
 
-#: reforis_diagnostics/__init__.py:66
+#: reforis_diagnostics/__init__.py:84
 msgid "Requested report does not exist"
 msgstr "Vyžádaný report neexistuje"
 
-#: reforis_diagnostics/__init__.py:89
+#: reforis_diagnostics/__init__.py:110
 msgid "Cannot delete report"
 msgstr "Nelze smazat report"
 
@@ -108,3 +108,4 @@ msgstr "Nelze smazat report"
 
 #~ msgid "Cannot fetch report data"
 #~ msgstr ""
+

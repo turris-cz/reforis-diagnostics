@@ -28,7 +28,7 @@ def test_post_reports(client):
 
 @mock_backend_response({"diagnostics": {"prepare_diagnostic": {}}})
 def test_post_reports_invalid_response(client):
-    response = client.post("/diagnostics/api/reports")
+    response = client.post("/diagnostics/api/reports", json=False)
     assert response.status_code == HTTPStatus.BAD_REQUEST
     assert response.json == "Invalid JSON"
 

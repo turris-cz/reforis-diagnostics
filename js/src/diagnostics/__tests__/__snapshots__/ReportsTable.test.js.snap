@@ -32,7 +32,7 @@ exports[`<ReportsTable /> should display spinner when report is not ready 1`] = 
             1234
           </td>
           <td
-            class="text-right"
+            class="text-end"
           >
             <div
               class="spinner-border  text-primary"
@@ -92,7 +92,7 @@ exports[`<ReportsTable /> should render reports 1`] = `
             1234
           </td>
           <td
-            class="text-right"
+            class="text-end"
           >
             <div
               class="btn-group btn-group-sm"
@@ -104,7 +104,7 @@ exports[`<ReportsTable /> should render reports 1`] = `
                 href="/reforis/diagnostics/api/reports/1234/contents"
               >
                 <i
-                  class="fas fa-download fa-sm mr-1 align-baseline"
+                  class="fas fa-download fa-sm me-1 align-baseline"
                 />
                 Download
               </a>
@@ -114,7 +114,7 @@ exports[`<ReportsTable /> should render reports 1`] = `
               >
                 <span>
                   <i
-                    class="fas fa-trash fa-sm mr-1 align-baseline"
+                    class="fas fa-trash fa-sm me-1 align-baseline"
                   />
                   Delete
                 </span>

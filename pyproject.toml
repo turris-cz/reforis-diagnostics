@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "reforis-diagnostics"
-version = "3.0.0"
+version = "3.1.0"
 description = "reForis Diagnostics plugin is a tool for collecting and downloading logs from Turris routers."
 readme = "README.md"
 license = "GPL-3.0-or-later"

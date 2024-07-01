@@ -24,24 +24,20 @@ exports[`<Diagnostics /> should handle error on loading reports 1`] = `
         style="font-weight: bold;"
       >
         <div
-          class="form-group"
+          class="mb-3 form-check"
         >
-          <div
-            class="custom-control custom-checkbox "
+          <input
+            checked=""
+            class="form-check-input"
+            id="1"
+            type="checkbox"
+          />
+          <label
+            class="form-check-label"
+            for="1"
           >
-            <input
-              checked=""
-              class="custom-control-input"
-              id="1"
-              type="checkbox"
-            />
-            <label
-              class="custom-control-label"
-              for="1"
-            >
-              Select all
-            </label>
-          </div>
+            Select all
+          </label>
         </div>
       </div>
       <div
@@ -51,37 +47,35 @@ exports[`<Diagnostics /> should handle error on loading reports 1`] = `
           class="col-sm-12 col-md-6 col-lg-4"
         >
           <div
-            class="form-group"
+            class="mb-3 form-check"
           >
-            <div
-              class="custom-control custom-checkbox "
+            <input
+              checked=""
+              class="form-check-input"
+              id="2"
+              type="checkbox"
+            />
+            <label
+              class="form-check-label"
+              for="2"
             >
-              <input
-                checked=""
-                class="custom-control-input"
-                id="2"
-                type="checkbox"
-              />
-              <label
-                class="custom-control-label"
-                for="2"
-              >
-                foobar_module
-                <small
-                  class="form-text text-muted"
-                >
-                  foobar_module_description
-                </small>
-              </label>
+              foobar_module
+            </label>
+            <div
+              class="form-text"
+            >
+              <small>
+                foobar_module_description
+              </small>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-3 text-end"
       >
         <button
-          class="btn btn-primary col-sm-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
+          class="btn btn-primary col-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
           data-testid="generate-report-button"
           type="submit"
         >
@@ -127,24 +121,20 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
         style="font-weight: bold;"
       >
         <div
-          class="form-group"
+          class="mb-3 form-check"
         >
-          <div
-            class="custom-control custom-checkbox "
+          <input
+            checked=""
+            class="form-check-input"
+            id="1"
+            type="checkbox"
+          />
+          <label
+            class="form-check-label"
+            for="1"
           >
-            <input
-              checked=""
-              class="custom-control-input"
-              id="1"
-              type="checkbox"
-            />
-            <label
-              class="custom-control-label"
-              for="1"
-            >
-              Select all
-            </label>
-          </div>
+            Select all
+          </label>
         </div>
       </div>
       <div
@@ -154,37 +144,35 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
           class="col-sm-12 col-md-6 col-lg-4"
         >
           <div
-            class="form-group"
+            class="mb-3 form-check"
           >
-            <div
-              class="custom-control custom-checkbox "
+            <input
+              checked=""
+              class="form-check-input"
+              id="2"
+              type="checkbox"
+            />
+            <label
+              class="form-check-label"
+              for="2"
             >
-              <input
-                checked=""
-                class="custom-control-input"
-                id="2"
-                type="checkbox"
-              />
-              <label
-                class="custom-control-label"
-                for="2"
-              >
-                foobar_module
-                <small
-                  class="form-text text-muted"
-                >
-                  foobar_module_description
-                </small>
-              </label>
+              foobar_module
+            </label>
+            <div
+              class="form-text"
+            >
+              <small>
+                foobar_module_description
+              </small>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-3 text-end"
       >
         <button
-          class="btn btn-primary col-sm-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
+          class="btn btn-primary col-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
           data-testid="generate-report-button"
           type="submit"
         >
@@ -227,7 +215,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
               1234
             </td>
             <td
-              class="text-right"
+              class="text-end"
             >
               <div
                 class="btn-group btn-group-sm"
@@ -239,7 +227,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
                   href="/reforis/diagnostics/api/reports/1234/contents"
                 >
                   <i
-                    class="fas fa-download fa-sm mr-1 align-baseline"
+                    class="fas fa-download fa-sm me-1 align-baseline"
                   />
                   Download
                 </a>
@@ -249,7 +237,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
                 >
                   <span>
                     <i
-                      class="fas fa-trash fa-sm mr-1 align-baseline"
+                      class="fas fa-trash fa-sm me-1 align-baseline"
                     />
                     Delete
                   </span>
@@ -264,7 +252,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
               5678
             </td>
             <td
-              class="text-right"
+              class="text-end"
             >
               <div
                 class="btn-group btn-group-sm"
@@ -276,7 +264,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
                   href="/reforis/diagnostics/api/reports/5678/contents"
                 >
                   <i
-                    class="fas fa-download fa-sm mr-1 align-baseline"
+                    class="fas fa-download fa-sm me-1 align-baseline"
                   />
                   Download
                 </a>
@@ -286,7 +274,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
                 >
                   <span>
                     <i
-                      class="fas fa-trash fa-sm mr-1 align-baseline"
+                      class="fas fa-trash fa-sm me-1 align-baseline"
                     />
                     Delete
                   </span>
@@ -325,24 +313,20 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
         style="font-weight: bold;"
       >
         <div
-          class="form-group"
+          class="mb-3 form-check"
         >
-          <div
-            class="custom-control custom-checkbox "
+          <input
+            checked=""
+            class="form-check-input"
+            id="1"
+            type="checkbox"
+          />
+          <label
+            class="form-check-label"
+            for="1"
           >
-            <input
-              checked=""
-              class="custom-control-input"
-              id="1"
-              type="checkbox"
-            />
-            <label
-              class="custom-control-label"
-              for="1"
-            >
-              Select all
-            </label>
-          </div>
+            Select all
+          </label>
         </div>
       </div>
       <div
@@ -352,37 +336,35 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
           class="col-sm-12 col-md-6 col-lg-4"
         >
           <div
-            class="form-group"
+            class="mb-3 form-check"
           >
-            <div
-              class="custom-control custom-checkbox "
+            <input
+              checked=""
+              class="form-check-input"
+              id="2"
+              type="checkbox"
+            />
+            <label
+              class="form-check-label"
+              for="2"
             >
-              <input
-                checked=""
-                class="custom-control-input"
-                id="2"
-                type="checkbox"
-              />
-              <label
-                class="custom-control-label"
-                for="2"
-              >
-                foobar_module
-                <small
-                  class="form-text text-muted"
-                >
-                  foobar_module_description
-                </small>
-              </label>
+              foobar_module
+            </label>
+            <div
+              class="form-text"
+            >
+              <small>
+                foobar_module_description
+              </small>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-3 text-end"
       >
         <button
-          class="btn btn-primary col-sm-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
+          class="btn btn-primary col-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
           data-testid="generate-report-button"
           type="submit"
         >
@@ -425,7 +407,7 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
               1234
             </td>
             <td
-              class="text-right"
+              class="text-end"
             >
               <div
                 class="btn-group btn-group-sm"
@@ -437,7 +419,7 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
                   href="/reforis/diagnostics/api/reports/1234/contents"
                 >
                   <i
-                    class="fas fa-download fa-sm mr-1 align-baseline"
+                    class="fas fa-download fa-sm me-1 align-baseline"
                   />
                   Download
                 </a>
@@ -447,7 +429,7 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
                 >
                   <span>
                     <i
-                      class="fas fa-trash fa-sm mr-1 align-baseline"
+                      class="fas fa-trash fa-sm me-1 align-baseline"
                     />
                     Delete
                   </span>

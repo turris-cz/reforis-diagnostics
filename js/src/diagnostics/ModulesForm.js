@@ -87,7 +87,7 @@ export default function ModulesForm({
                     />
                 </div>
                 {checkboxes}
-                <div className={`${buttonFormFieldsSize} text-right`}>
+                <div className={`${buttonFormFieldsSize} text-end`}>
                     <Button
                         data-testid="generate-report-button"
                         type="submit"

@@ -61,7 +61,7 @@ function ReportRow({ report, onReload }) {
         <tr>
             <td className="align-middle">{report.diag_id}</td>
 
-            <td className="text-right">
+            <td className="text-end">
                 <ReportActions report={report} onReload={onReload} />
             </td>
         </tr>
@@ -88,11 +88,11 @@ function ReportActions({ report, onReload }) {
             <DownloadButton
                 href={`${API_URLs.reports}/${report.diag_id}/contents`}
             >
-                <i className="fas fa-download fa-sm mr-1 align-baseline" />
+                <i className="fas fa-download fa-sm me-1 align-baseline" />
                 {_("Download")}
             </DownloadButton>
             <Button onClick={deleteReport} className="btn-danger btn-sm">
-                <i className="fas fa-trash fa-sm mr-1 align-baseline" />
+                <i className="fas fa-trash fa-sm me-1 align-baseline" />
                 {_("Delete")}
             </Button>
         </div>

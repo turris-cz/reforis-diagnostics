@@ -48,24 +48,20 @@ exports[`<Modules /> should render modules 1`] = `
       style="font-weight: bold;"
     >
       <div
-        class="form-group"
+        class="mb-3 form-check"
       >
-        <div
-          class="custom-control custom-checkbox "
+        <input
+          checked=""
+          class="form-check-input"
+          id="1"
+          type="checkbox"
+        />
+        <label
+          class="form-check-label"
+          for="1"
         >
-          <input
-            checked=""
-            class="custom-control-input"
-            id="1"
-            type="checkbox"
-          />
-          <label
-            class="custom-control-label"
-            for="1"
-          >
-            Select all
-          </label>
-        </div>
+          Select all
+        </label>
       </div>
     </div>
     <div
@@ -75,28 +71,26 @@ exports[`<Modules /> should render modules 1`] = `
         class="col-sm-12 col-md-6 col-lg-4"
       >
         <div
-          class="form-group"
+          class="mb-3 form-check"
         >
-          <div
-            class="custom-control custom-checkbox "
+          <input
+            checked=""
+            class="form-check-input"
+            id="2"
+            type="checkbox"
+          />
+          <label
+            class="form-check-label"
+            for="2"
           >
-            <input
-              checked=""
-              class="custom-control-input"
-              id="2"
-              type="checkbox"
-            />
-            <label
-              class="custom-control-label"
-              for="2"
-            >
-              foo_module
-              <small
-                class="form-text text-muted"
-              >
-                Boo module description.
-              </small>
-            </label>
+            foo_module
+          </label>
+          <div
+            class="form-text"
+          >
+            <small>
+              Boo module description.
+            </small>
           </div>
         </div>
       </div>
@@ -104,28 +98,26 @@ exports[`<Modules /> should render modules 1`] = `
         class="col-sm-12 col-md-6 col-lg-4"
       >
         <div
-          class="form-group"
+          class="mb-3 form-check"
         >
-          <div
-            class="custom-control custom-checkbox "
+          <input
+            checked=""
+            class="form-check-input"
+            id="3"
+            type="checkbox"
+          />
+          <label
+            class="form-check-label"
+            for="3"
           >
-            <input
-              checked=""
-              class="custom-control-input"
-              id="3"
-              type="checkbox"
-            />
-            <label
-              class="custom-control-label"
-              for="3"
-            >
-              bar_module
-              <small
-                class="form-text text-muted"
-              >
-                Bar module description.
-              </small>
-            </label>
+            bar_module
+          </label>
+          <div
+            class="form-text"
+          >
+            <small>
+              Bar module description.
+            </small>
           </div>
         </div>
       </div>
@@ -133,28 +125,26 @@ exports[`<Modules /> should render modules 1`] = `
         class="col-sm-12 col-md-6 col-lg-4"
       >
         <div
-          class="form-group"
+          class="mb-3 form-check"
         >
-          <div
-            class="custom-control custom-checkbox "
+          <input
+            checked=""
+            class="form-check-input"
+            id="4"
+            type="checkbox"
+          />
+          <label
+            class="form-check-label"
+            for="4"
           >
-            <input
-              checked=""
-              class="custom-control-input"
-              id="4"
-              type="checkbox"
-            />
-            <label
-              class="custom-control-label"
-              for="4"
-            >
-              fizz_module
-              <small
-                class="form-text text-muted"
-              >
-                Fizz module description.
-              </small>
-            </label>
+            fizz_module
+          </label>
+          <div
+            class="form-text"
+          >
+            <small>
+              Fizz module description.
+            </small>
           </div>
         </div>
       </div>
@@ -162,37 +152,35 @@ exports[`<Modules /> should render modules 1`] = `
         class="col-sm-12 col-md-6 col-lg-4"
       >
         <div
-          class="form-group"
+          class="mb-3 form-check"
         >
-          <div
-            class="custom-control custom-checkbox "
+          <input
+            checked=""
+            class="form-check-input"
+            id="5"
+            type="checkbox"
+          />
+          <label
+            class="form-check-label"
+            for="5"
           >
-            <input
-              checked=""
-              class="custom-control-input"
-              id="5"
-              type="checkbox"
-            />
-            <label
-              class="custom-control-label"
-              for="5"
-            >
-              buzz_module
-              <small
-                class="form-text text-muted"
-              >
-                Buzz module description.
-              </small>
-            </label>
+            buzz_module
+          </label>
+          <div
+            class="form-text"
+          >
+            <small>
+              Buzz module description.
+            </small>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+      class="col-sm-12 col-lg-12 p-0 mb-3 text-end"
     >
       <button
-        class="btn btn-primary col-sm-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
+        class="btn btn-primary col-12 col-md-3 col-lg-2 d-inline-flex justify-content-center align-items-center"
         data-testid="generate-report-button"
         type="submit"
       >

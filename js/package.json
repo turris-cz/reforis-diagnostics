@@ -6,7 +6,7 @@
         "url": "https://gitlab.nic.cz/turris/reforis/reforis-diagnostics.git"
     },
     "license": "GPL-3.0",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "description": "reForis Diagnostics Plugin is a tool for collecting and downloading logs from Turris routers.",
     "main": "./src/app.js",
     "eslintConfig": {

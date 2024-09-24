@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2024 CZ.NIC z.s.p.o. (https://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -7,7 +7,12 @@
 
 import React, { useEffect } from "react";
 
-import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
+import {
+    useAPIGet,
+    withSpinnerOnSending,
+    withErrorMessage,
+    formFieldsSize,
+} from "foris";
 
 import API_URLs from "API";
 
@@ -28,8 +33,10 @@ export default function Diagnostics() {
                     "Generate a diagnostics report to simplify debugging some problems related to the router's functionality."
                 )}
             </p>
-            <div className="card p-4 mb-3">
+            <div className={formFieldsSize}>
                 <Modules onReload={getReports} />
+            </div>
+            <div className={formFieldsSize}>
                 <h2>{_("Reports")}</h2>
                 <ReportsTableWithErrorAndSpinner
                     apiState={getReportsResponse.state}

@@ -61,8 +61,7 @@ ReportRow.propTypes = {
 function ReportRow({ report, onReload }) {
     return (
         <tr>
-            <td className="align-middle">{report.diag_id}</td>
-
+            <td className="align-middle text-nowrap">{report.diag_id}</td>
             <td className="text-end">
                 <ReportActions report={report} onReload={onReload} />
             </td>
@@ -82,7 +81,7 @@ function ReportActions({ report, onReload }) {
     const deleteReport = useDeleteReport(report.diag_id, onReload);
 
     if (!isReady) {
-        return <SpinnerElement className="text-primary" />;
+        return <SpinnerElement small className="text-primary" />;
     }
 
     return (

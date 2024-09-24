@@ -7,6 +7,8 @@
 
 import React from "react";
 
+import { faDownload, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, DownloadButton, SpinnerElement } from "foris";
 import PropTypes from "prop-types";
 
@@ -84,15 +86,15 @@ function ReportActions({ report, onReload }) {
     }
 
     return (
-        <div className="btn-group btn-group-sm" role="group">
+        <div className="btn-group btn-group-sm text-nowrap" role="group">
             <DownloadButton
                 href={`${API_URLs.reports}/${report.diag_id}/contents`}
             >
-                <i className="fas fa-download fa-sm me-1 align-baseline" />
+                <FontAwesomeIcon icon={faDownload} className="fa-sm me-1" />
                 {_("Download")}
             </DownloadButton>
             <Button onClick={deleteReport} className="btn-danger btn-sm">
-                <i className="fas fa-trash fa-sm me-1 align-baseline" />
+                <FontAwesomeIcon icon={faTrash} className="fa-sm me-1" />
                 {_("Delete")}
             </Button>
         </div>

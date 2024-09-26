@@ -7,6 +7,8 @@
 
 import React from "react";
 
+import { faDownload, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, DownloadButton, SpinnerElement } from "foris";
 import PropTypes from "prop-types";
 
@@ -59,8 +61,7 @@ ReportRow.propTypes = {
 function ReportRow({ report, onReload }) {
     return (
         <tr>
-            <td className="align-middle">{report.diag_id}</td>
-
+            <td className="align-middle text-nowrap">{report.diag_id}</td>
             <td className="text-end">
                 <ReportActions report={report} onReload={onReload} />
             </td>
@@ -80,19 +81,19 @@ function ReportActions({ report, onReload }) {
     const deleteReport = useDeleteReport(report.diag_id, onReload);
 
     if (!isReady) {
-        return <SpinnerElement className="text-primary" />;
+        return <SpinnerElement small className="text-primary" />;
     }
 
     return (
-        <div className="btn-group btn-group-sm" role="group">
+        <div className="btn-group btn-group-sm text-nowrap" role="group">
             <DownloadButton
                 href={`${API_URLs.reports}/${report.diag_id}/contents`}
             >
-                <i className="fas fa-download fa-sm me-1 align-baseline" />
+                <FontAwesomeIcon icon={faDownload} className="fa-sm me-1" />
                 {_("Download")}
             </DownloadButton>
             <Button onClick={deleteReport} className="btn-danger btn-sm">
-                <i className="fas fa-trash fa-sm me-1 align-baseline" />
+                <FontAwesomeIcon icon={faTrash} className="fa-sm me-1" />
                 {_("Delete")}
             </Button>
         </div>

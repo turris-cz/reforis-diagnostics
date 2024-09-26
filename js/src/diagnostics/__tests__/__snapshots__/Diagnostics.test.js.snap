@@ -9,7 +9,7 @@ exports[`<Diagnostics /> should handle error on loading reports 1`] = `
     Generate a diagnostics report to simplify debugging some problems related to the router's functionality.
   </p>
   <div
-    class="card p-4 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <h2>
       Modules
@@ -85,6 +85,10 @@ exports[`<Diagnostics /> should handle error on loading reports 1`] = `
         </button>
       </div>
     </form>
+  </div>
+  <div
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+  >
     <h2>
       Reports
     </h2>
@@ -106,7 +110,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
     Generate a diagnostics report to simplify debugging some problems related to the router's functionality.
   </p>
   <div
-    class="card p-4 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <h2>
       Modules
@@ -182,6 +186,10 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
         </button>
       </div>
     </form>
+  </div>
+  <div
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+  >
     <h2>
       Reports
     </h2>
@@ -210,7 +218,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
         <tbody>
           <tr>
             <td
-              class="align-middle"
+              class="align-middle text-nowrap"
             >
               1234
             </td>
@@ -218,7 +226,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
               class="text-end"
             >
               <div
-                class="btn-group btn-group-sm"
+                class="btn-group btn-group-sm text-nowrap"
                 role="group"
               >
                 <a
@@ -227,7 +235,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
                   href="/reforis/diagnostics/api/reports/1234/contents"
                 >
                   <i
-                    class="fas fa-download fa-sm me-1 align-baseline"
+                    class="fa"
                   />
                   Download
                 </a>
@@ -237,7 +245,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
                 >
                   <span>
                     <i
-                      class="fas fa-trash fa-sm me-1 align-baseline"
+                      class="fa"
                     />
                     Delete
                   </span>
@@ -247,7 +255,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
           </tr>
           <tr>
             <td
-              class="align-middle"
+              class="align-middle text-nowrap"
             >
               5678
             </td>
@@ -255,7 +263,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
               class="text-end"
             >
               <div
-                class="btn-group btn-group-sm"
+                class="btn-group btn-group-sm text-nowrap"
                 role="group"
               >
                 <a
@@ -264,7 +272,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
                   href="/reforis/diagnostics/api/reports/5678/contents"
                 >
                   <i
-                    class="fas fa-download fa-sm me-1 align-baseline"
+                    class="fa"
                   />
                   Download
                 </a>
@@ -274,7 +282,7 @@ exports[`<Diagnostics /> should reload reports table when new report is generate
                 >
                   <span>
                     <i
-                      class="fas fa-trash fa-sm me-1 align-baseline"
+                      class="fa"
                     />
                     Delete
                   </span>
@@ -298,7 +306,7 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
     Generate a diagnostics report to simplify debugging some problems related to the router's functionality.
   </p>
   <div
-    class="card p-4 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <h2>
       Modules
@@ -374,6 +382,10 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
         </button>
       </div>
     </form>
+  </div>
+  <div
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+  >
     <h2>
       Reports
     </h2>
@@ -402,7 +414,7 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
         <tbody>
           <tr>
             <td
-              class="align-middle"
+              class="align-middle text-nowrap"
             >
               1234
             </td>
@@ -410,7 +422,7 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
               class="text-end"
             >
               <div
-                class="btn-group btn-group-sm"
+                class="btn-group btn-group-sm text-nowrap"
                 role="group"
               >
                 <a
@@ -419,7 +431,7 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
                   href="/reforis/diagnostics/api/reports/1234/contents"
                 >
                   <i
-                    class="fas fa-download fa-sm me-1 align-baseline"
+                    class="fa"
                   />
                   Download
                 </a>
@@ -429,7 +441,7 @@ exports[`<Diagnostics /> should render modules and reports 1`] = `
                 >
                   <span>
                     <i
-                      class="fas fa-trash fa-sm me-1 align-baseline"
+                      class="fa"
                     />
                     Delete
                   </span>

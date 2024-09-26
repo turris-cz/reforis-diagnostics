@@ -8,6 +8,18 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [3.2.0] - 2024-09-26
+
+### Added
+
+-   Added & updated Weblate translations
+
+### Changed
+
+-   Migrated to FontAwesome v6
+-   Updated Foris JS library to v6.2.1
+-   Separated visually Reports and Modules + refactor classes
+
 ## [3.1.0] - 2024-07-01
 
 ### Changed
@@ -105,7 +117,8 @@ and this project adheres to
 
 -   Completely rewritten in JS with the new plugin system.
 
-[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.1.0...master
+[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.2.0...master
+[3.2.0]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.1.0...v3.2.0
 [3.1.0]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.0.0...v3.1.0
 [3.0.0]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v2.5.1...v3.0.0
 [2.5.1]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v2.5.0...v2.5.1

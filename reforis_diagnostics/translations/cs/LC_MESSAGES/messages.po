@@ -1,39 +1,38 @@
 # Czech translations for reForis Diagnostics.
-# Copyright (C) 2024 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
+# Copyright (C) 2025 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
 # This file is distributed under the same license as the reForis Diagnostics
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-12 10:32+0100\n"
+"POT-Creation-Date: 2025-04-04 14:23+0200\n"
 "PO-Revision-Date: 2024-11-15 13:00+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/turris/"
-"reforis-diagnostics-plugin/cs/>\n"
 "Language: cs\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis-"
+"diagnostics-plugin/cs/>\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.9-dev\n"
-"Generated-By: Babel 2.14.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:25
+#: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:30
 msgid "Diagnostics"
 msgstr "Diagnostiky"
 
-#: js/src/diagnostics/Diagnostics.js:27
+#: js/src/diagnostics/Diagnostics.js:32
 msgid ""
 "Generate a diagnostics report to simplify debugging some problems related"
 " to the router's functionality."
 msgstr ""
-"Vytvořit diagnostické hlášení, které zjednoduší ladění některých problémů "
-"souvisejících s funkcí směrovače."
+"Vytvořit diagnostické hlášení, které zjednoduší ladění některých problémů"
+" souvisejících s funkcí směrovače."
 
-#: js/src/diagnostics/Diagnostics.js:33
+#: js/src/diagnostics/Diagnostics.js:40
 msgid "Reports"
 msgstr "Hlášení"
 
@@ -57,23 +56,23 @@ msgstr "Vybrat vše"
 msgid "Generate report"
 msgstr "Vytvořit report"
 
-#: js/src/diagnostics/ReportsTable.js:26
+#: js/src/diagnostics/ReportsTable.js:28
 msgid "There are no reports available."
 msgstr "Nejsou k dispozici žádná hlášení."
 
-#: js/src/diagnostics/ReportsTable.js:36
+#: js/src/diagnostics/ReportsTable.js:38
 msgid "ID"
 msgstr "Identif."
 
-#: js/src/diagnostics/ReportsTable.js:37
+#: js/src/diagnostics/ReportsTable.js:39
 msgid "Actions"
 msgstr "Akce"
 
-#: js/src/diagnostics/ReportsTable.js:92
+#: js/src/diagnostics/ReportsTable.js:93
 msgid "Download"
 msgstr "Stáhnout"
 
-#: js/src/diagnostics/ReportsTable.js:96
+#: js/src/diagnostics/ReportsTable.js:97
 msgid "Delete"
 msgstr "Smazat"
 
@@ -109,3 +108,4 @@ msgstr "Hlášení se nedaří smazat"
 
 #~ msgid "Cannot fetch report data"
 #~ msgstr ""
+

@@ -1,14 +1,14 @@
 # Faroese translations for reForis Diagnostics.
-# Copyright (C) 2024 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
+# Copyright (C) 2025 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
 # This file is distributed under the same license as the reForis Diagnostics
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-12 10:32+0100\n"
+"POT-Creation-Date: 2025-04-04 14:23+0200\n"
 "PO-Revision-Date: 2019-10-02 16:28+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fo\n"
@@ -17,19 +17,19 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.14.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:25
+#: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:30
 msgid "Diagnostics"
 msgstr ""
 
-#: js/src/diagnostics/Diagnostics.js:27
+#: js/src/diagnostics/Diagnostics.js:32
 msgid ""
 "Generate a diagnostics report to simplify debugging some problems related"
 " to the router's functionality."
 msgstr ""
 
-#: js/src/diagnostics/Diagnostics.js:33
+#: js/src/diagnostics/Diagnostics.js:40
 msgid "Reports"
 msgstr ""
 
@@ -53,23 +53,23 @@ msgstr ""
 msgid "Generate report"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:26
+#: js/src/diagnostics/ReportsTable.js:28
 msgid "There are no reports available."
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:36
+#: js/src/diagnostics/ReportsTable.js:38
 msgid "ID"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:37
+#: js/src/diagnostics/ReportsTable.js:39
 msgid "Actions"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:92
+#: js/src/diagnostics/ReportsTable.js:93
 msgid "Download"
 msgstr ""
 
-#: js/src/diagnostics/ReportsTable.js:96
+#: js/src/diagnostics/ReportsTable.js:97
 msgid "Delete"
 msgstr ""
 

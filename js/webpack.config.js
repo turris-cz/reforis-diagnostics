@@ -21,9 +21,6 @@ module.exports = () => ({
             path.resolve(__dirname, "./src"),
             path.resolve(__dirname, "./node_modules"),
         ],
-        alias: {
-            process: "process/browser",
-        },
     },
     module: {
         rules: [
@@ -40,7 +37,7 @@ module.exports = () => ({
     },
     plugins: [
         new webpack.ProvidePlugin({
-            process: "process/browser",
+            process: "process/browser.js",
         }),
     ],
     // Equal to peerDependencies in package.json

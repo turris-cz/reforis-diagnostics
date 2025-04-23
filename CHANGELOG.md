@@ -8,116 +8,130 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [3.2.1] - 2025-04-23
+
+### Added
+
+- Added & updated Weblate translations
+
+### Changed
+
+- Updated Foris JS library to v6.7.2
+- Updated dependencies in package.json
+- Fixed webpack configuration for process/browser.js
+- NPM audit fix
+
 ## [3.2.0] - 2024-09-26
 
 ### Added
 
--   Added & updated Weblate translations
+- Added & updated Weblate translations
 
 ### Changed
 
--   Migrated to FontAwesome v6
--   Updated Foris JS library to v6.2.1
--   Separated visually Reports and Modules + refactor classes
+- Migrated to FontAwesome v6
+- Updated Foris JS library to v6.2.1
+- Separated visually Reports and Modules + refactor classes
 
 ## [3.1.0] - 2024-07-01
 
 ### Changed
 
--   Updated .gitignore file to exclude Ruff cache folder
--   Updated dependencies in package.json
--   Updated Foris JS library to v6.0.2
--   NPM audit fix
+- Updated .gitignore file to exclude Ruff cache folder
+- Updated dependencies in package.json
+- Updated Foris JS library to v6.0.2
+- NPM audit fix
 
 ## [3.0.0] - 2024-03-12
 
 ### Added
 
--   Added & updated Weblate translations
--   Added missing foris-controller module installation
--   Added data-testid to generate report button
+- Added & updated Weblate translations
+- Added missing foris-controller module installation
+- Added data-testid to generate report button
 
 ### Changed
 
--   Updated dependencies in package.json
--   Updated Node.js to v21.x in Makefile
--   Updated ESLint and Prettier configurations
--   Updated .gitignore to exclude minified JS files and license files
--   Updated webpack.config.js with process/browser alias
--   Updated CI to use shared scripts, build and publish python package
--   Update SpinnerElement class in ReportsTable.js
--   Replaced Pylint & Pycodestyle for Ruff
--   Restructured and updated Makefile
--   Changed build system to Hatch
--   NPM audit fix
+- Updated dependencies in package.json
+- Updated Node.js to v21.x in Makefile
+- Updated ESLint and Prettier configurations
+- Updated .gitignore to exclude minified JS files and license files
+- Updated webpack.config.js with process/browser alias
+- Updated CI to use shared scripts, build and publish python package
+- Update SpinnerElement class in ReportsTable.js
+- Replaced Pylint & Pycodestyle for Ruff
+- Restructured and updated Makefile
+- Changed build system to Hatch
+- NPM audit fix
 
 ### Removed
 
--   Removed MANIFEST.in
+- Removed MANIFEST.in
 
 ## [2.5.1] - 2021-03-03
 
--   Update & create translation messages
--   Update copyright & GitLab links
--   Update Foris JS library to v5.1.9
+- Update & create translation messages
+- Update copyright & GitLab links
+- Update Foris JS library to v5.1.9
 
 ## [2.5.0] - 2020-09-24
 
--   Change all modules checked by default
--   Integrate Prettier and format files
--   Restructure headings & add card layout
--   Improve Reports table
+- Change all modules checked by default
+- Integrate Prettier and format files
+- Restructure headings & add card layout
+- Improve Reports table
 
 ## [2.4.0] - 2020-03-27
 
--   Update ForisJS v4.5.0.
--   NPM audit fix & update packages.
+- Update ForisJS v4.5.0.
+- NPM audit fix & update packages.
 
 ## [2.3.1] - 2020-03-02
 
--   Update translations.
+- Update translations.
 
 ## [2.3.0] - 2020-02-17
 
--   Use ForisJS 3.4.0.
--   Small UI/UX improvements.
--   Improve Makefile.
+- Use ForisJS 3.4.0.
+- Small UI/UX improvements.
+- Improve Makefile.
 
 ## [2.2.2] - 2020-01-10
 
--   Updated foris JS version.
--   Updated python dependencies and API tests.
+- Updated foris JS version.
+- Updated python dependencies and API tests.
 
 ## [2.2.1] - 2019-11-21
 
--   Fix js app path.
+- Fix js app path.
 
 ## [2.2.0] - 2019-11-20
 
--   Use API polling from forisjs.
--   Use forisjs 1.3.2.
--   Update translations.
--   Use global AlertContext.
--   Add loading and error handlers.
--   Use shared lint config.
--   Add missing copyrights.
--   A lot of small improvements.
+- Use API polling from forisjs.
+- Use forisjs 1.3.2.
+- Update translations.
+- Use global AlertContext.
+- Add loading and error handlers.
+- Use shared lint config.
+- Add missing copyrights.
+- A lot of small improvements.
 
 ## [2.1.0] - 2019-10-22
 
--   Fix WS closing connection after downloading bug.
--   Use major version of Foris-js.
--   Use common python code with other plugins.
+- Fix WS closing connection after downloading bug.
+- Use major version of Foris-js.
+- Use common python code with other plugins.
 
 ## [2.0.1] - 2019-10-10
 
--   Fix static path.
+- Fix static path.
 
 ## [2.0.0] - 2019-10-08
 
--   Completely rewritten in JS with the new plugin system.
+- Completely rewritten in JS with the new plugin system.
 
-[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.2.0...master
+[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.2.1...master
+[3.2.1]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.2.0...v3.2.1
 [3.2.0]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.1.0...v3.2.0
 [3.1.0]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.0.0...v3.1.0
 [3.0.0]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v2.5.1...v3.0.0

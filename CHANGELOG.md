@@ -8,6 +8,16 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [3.3.0] - 2025-11-07
+
+### Added
+
+- Added & updated Weblate translations
+
+### Changed
+
+- Updated several dependencies in package.json
+
 ## [3.2.1] - 2025-04-23
 
 ### Added
@@ -130,7 +140,8 @@ and this project adheres to
 
 - Completely rewritten in JS with the new plugin system.
 
-[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.2.1...master
+[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.3.0...master
+[3.3.0]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.2.1...v3.3.0
 [3.2.1]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.2.0...v3.2.1
 [3.2.0]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.1.0...v3.2.0
 [3.1.0]: https://gitlab.nic.cz/turris/reforis/reforis-diagnostics/-/compare/v3.0.0...v3.1.0

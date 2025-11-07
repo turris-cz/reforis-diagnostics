@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-04 14:23+0200\n"
-"PO-Revision-Date: 2024-11-15 13:00+0000\n"
+"POT-Creation-Date: 2025-11-07 19:41+0300\n"
+"PO-Revision-Date: 2025-05-14 21:01+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language: cs\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis-"
@@ -42,7 +42,7 @@ msgstr "Moduly"
 
 #: js/src/diagnostics/ModulesForm.js:42
 msgid "Cannot generate report"
-msgstr "Hlášení se nedaří vytvořit"
+msgstr "Hlášení nebylo možné vytvořit"
 
 #: js/src/diagnostics/ModulesForm.js:75
 msgid "Select modules which you want to include in the report."
@@ -54,7 +54,7 @@ msgstr "Vybrat vše"
 
 #: js/src/diagnostics/ModulesForm.js:97
 msgid "Generate report"
-msgstr "Vytvořit report"
+msgstr "Vytvořit hlášení"
 
 #: js/src/diagnostics/ReportsTable.js:28
 msgid "There are no reports available."

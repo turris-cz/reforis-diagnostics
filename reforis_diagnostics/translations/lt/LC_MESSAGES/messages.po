@@ -9,58 +9,62 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-11-07 19:41+0300\n"
-"PO-Revision-Date: 2019-10-02 16:28+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2026-03-15 19:09+0000\n"
+"Last-Translator: Fln <weblate.org@fln.lt>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/turris/"
+"reforis-diagnostics-plugin/lt/>\n"
 "Language: lt\n"
-"Language-Team: lt <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"(n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.17-dev\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:30
 msgid "Diagnostics"
-msgstr ""
+msgstr "Diagnostika"
 
 #: js/src/diagnostics/Diagnostics.js:32
 msgid ""
 "Generate a diagnostics report to simplify debugging some problems related"
 " to the router's functionality."
 msgstr ""
+"Sukurti diagnostinę ataskaitą, kuri gali padėti rasti maršrutizatoriaus "
+"funkcionalumo problemų priežastis."
 
 #: js/src/diagnostics/Diagnostics.js:40
 msgid "Reports"
-msgstr ""
+msgstr "Ataskaitos"
 
 #: js/src/diagnostics/Modules.js:60
 msgid "Modules"
-msgstr ""
+msgstr "Moduliai"
 
 #: js/src/diagnostics/ModulesForm.js:42
 msgid "Cannot generate report"
-msgstr ""
+msgstr "Nepavyko sugeneruoti ataskaitos"
 
 #: js/src/diagnostics/ModulesForm.js:75
 msgid "Select modules which you want to include in the report."
-msgstr ""
+msgstr "Pasirinkite modulius, kuriuos norite įtraukti į ataskaitą."
 
 #: js/src/diagnostics/ModulesForm.js:80
 msgid "Select all"
-msgstr ""
+msgstr "Pažymėti viską"
 
 #: js/src/diagnostics/ModulesForm.js:97
 msgid "Generate report"
-msgstr ""
+msgstr "Generuoti ataskaitą"
 
 #: js/src/diagnostics/ReportsTable.js:28
 msgid "There are no reports available."
-msgstr ""
+msgstr "Ataskaitų nėra."
 
 #: js/src/diagnostics/ReportsTable.js:38
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: js/src/diagnostics/ReportsTable.js:39
 msgid "Actions"
@@ -106,4 +110,3 @@ msgstr ""
 
 #~ msgid "Cannot fetch report data"
 #~ msgstr ""
-

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: reForis Diagnostics 3.2.1\n"
 "Report-Msgid-Bugs-To: tech.support@turris.cz\n"
 "POT-Creation-Date: 2025-11-07 19:41+0300\n"
-"PO-Revision-Date: 2026-05-08 09:11+0000\n"
+"PO-Revision-Date: 2026-05-11 11:12+0000\n"
 "Last-Translator: Américo Monteiro <a_monteiro@gmx.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/turris/"
 "reforis-diagnostics-plugin/pt/>\n"
@@ -71,7 +71,7 @@ msgstr "Ações"
 
 #: js/src/diagnostics/ReportsTable.js:93
 msgid "Download"
-msgstr "Descarregar"
+msgstr "Descarga"
 
 #: js/src/diagnostics/ReportsTable.js:97
 msgid "Delete"

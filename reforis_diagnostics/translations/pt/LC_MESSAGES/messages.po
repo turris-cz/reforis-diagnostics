@@ -1,0 +1,102 @@
+# Portuguese translations for reForis Diagnostics.
+# Copyright (C) 2026 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
+# This file is distributed under the same license as the reForis Diagnostics
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: reForis Diagnostics 3.2.1\n"
+"Report-Msgid-Bugs-To: tech.support@turris.cz\n"
+"POT-Creation-Date: 2026-10-15 12:02+0300\n"
+"PO-Revision-Date: 2026-09-04 13:51+0000\n"
+"Last-Translator: Américo Monteiro <a_monteiro@gmx.com>\n"
+"Language: pt\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/turris"
+"/reforis-diagnostics-plugin/pt/>\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: js/src/app.js:11 js/src/diagnostics/Diagnostics.js:30
+msgid "Diagnostics"
+msgstr "Diagnósticos"
+
+#: js/src/diagnostics/Diagnostics.js:32
+msgid ""
+"Generate a diagnostics report to simplify debugging some problems related"
+" to the router's functionality."
+msgstr ""
+"Gera relatórios de diagnóstico para simplificar a depuração de alguns "
+"problemas relacionados com a funcionalidade do router."
+
+#: js/src/diagnostics/Diagnostics.js:40
+msgid "Reports"
+msgstr "Relatórios"
+
+#: js/src/diagnostics/Modules.js:60
+msgid "Modules"
+msgstr "Módulos"
+
+#: js/src/diagnostics/ModulesForm.js:42
+msgid "Cannot generate report"
+msgstr "Incapaz de gerar relatório"
+
+#: js/src/diagnostics/ModulesForm.js:75
+msgid "Select modules which you want to include in the report."
+msgstr "Selecionar módulos que deseja incluir no relatório."
+
+#: js/src/diagnostics/ModulesForm.js:80
+msgid "Select all"
+msgstr "Selecionar todos"
+
+#: js/src/diagnostics/ModulesForm.js:97
+msgid "Generate report"
+msgstr "Gerar relatório"
+
+#: js/src/diagnostics/ReportsTable.js:28
+msgid "There are no reports available."
+msgstr "Não existem relatórios disponíveis."
+
+#: js/src/diagnostics/ReportsTable.js:38
+msgid "ID"
+msgstr "ID"
+
+#: js/src/diagnostics/ReportsTable.js:39
+msgid "Actions"
+msgstr "Ações"
+
+#: js/src/diagnostics/ReportsTable.js:93
+msgid "Download"
+msgstr "Descarga"
+
+#: js/src/diagnostics/ReportsTable.js:97
+msgid "Delete"
+msgstr "Apagar"
+
+#: js/src/diagnostics/hooks.js:38
+msgid "Cannot fetch report data."
+msgstr "Incapaz de buscar dados de relatório."
+
+#: js/src/diagnostics/hooks.js:55
+msgid "Cannot delete report."
+msgstr "Incapaz de apagar relatório."
+
+#: reforis_diagnostics/__init__.py:55
+msgid "Cannot create diagnostics report"
+msgstr "Incapaz de criar relatório de diagnóstico"
+
+#: reforis_diagnostics/__init__.py:74
+msgid "Requested report is not ready yet"
+msgstr "O relatório pedido ainda não está pronto"
+
+#: reforis_diagnostics/__init__.py:82
+msgid "Requested report does not exist"
+msgstr "O relatório pedido não existe"
+
+#: reforis_diagnostics/__init__.py:108
+msgid "Cannot delete report"
+msgstr "Incapaz de apagar relatório"
+

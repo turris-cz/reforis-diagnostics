@@ -3,18 +3,16 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-""" Diagnostics module for Foris Controller API """
+"""Diagnostics module for Foris Controller API"""
 
 import gzip
 import io
 from http import HTTPStatus
 from pathlib import Path
 
-from flask import Blueprint, current_app, request, send_file, jsonify
+from flask import Blueprint, current_app, jsonify, request, send_file
 from flask_babel import gettext as _
-
 from reforis.foris_controller_api.utils import APIError, validate_json
-
 
 BASE_DIR = Path(__file__).parent
 
